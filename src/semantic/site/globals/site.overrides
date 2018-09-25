@@ -1,3 +1,38 @@
 /*******************************
         Global Overrides
 *******************************/
+
+.work-logos {
+  padding: 100px 0;
+  font-size: 50px;
+}
+
+.footer {
+  background: #353535;
+  color: #FFFFFF;
+}
+
+.footer a {
+  color: #FFFFFF;
+}
+
+.work-experience h2 {
+  font-size: 50px;
+}
+
+.work-experience h1 {
+  font-size: 50px;
+}
+
+.midnight-blue {
+  color: #B9D6F2 !important;
+}
+
+.static-form {
+  padding: 100px;
+  background: #2185D0;
+}
+
+.ui.secondary.pointing.menu .active.item {
+  border-color: white !important;
+}

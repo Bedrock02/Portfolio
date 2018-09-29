@@ -1,6 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Semantic UI Starter',
+    title: 'Steven Jimenez',
   },
-  plugins: ['gatsby-plugin-react-helmet', 'gatsby-plugin-less'],
+  plugins: [
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-less',
+  ],
 }

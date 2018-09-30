@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from '../components/Layout/index.js';
-import { Responsive, Image, Grid } from 'semantic-ui-react';
+import { Image, Grid } from 'semantic-ui-react';
 import Roles from '../components/Roles/index.js';
 import indexStyles from './index.module.css';
 import smImage from '../assets/img/sm_logo.png';
@@ -13,12 +13,11 @@ const IndexPage = () => (
     <Grid.Row style={{marginTop: "50px"}}centered padded="vertically">
       <Grid.Column textAlign="center">
         <Image style={{marginTop: '20px'}} centered rounded src="https://goo.gl/93WXBV" size="medium" />
-        <h2 className={indexStyles.wepa}> My name is Steven, I am Latino developer who is looking to make your app feel "WEPA"!</h2>
+        <h2 className={indexStyles.wepa}> My name is Steven, I am a Latino developer who is looking to make your app feel "WEPA"!</h2>
       </Grid.Column>
     </Grid.Row>
 
-    <Responsive as={Roles} maxWidth={Responsive.onlyTablet.maxWidth} isHorizontal={false}/>
-    <Responsive as={Roles} minWidth={Responsive.onlyComputer.minWidth} isHorizontal={true}/>
+    <Roles isHorizontal={false}/>
 
     <Grid.Row id="work" className="work-experience" centered verticalAlign="middle" style={{padding: "100px 0"}}>
       <Grid.Column stackable="true" textAlign="center" width={16}>

@@ -1,29 +1,16 @@
 .group {
-  border: "none";
-  boxShadow: "none";
   margin-top: 50px;
 }
 .dev {
   background-color: #B9D6F2 !important;
-  height: 500px;
-  min-height: 470px;
-  max-height: 500px;
-  padding: 50px 50px 0px !important;
 }
 .speaking {
   background-color: #0353A4 !important;
   color: white;
-  min-height: 470px;
-  max-height: 500px;
-  padding: 50px 50px 0px !important;
 }
 .leader {
   color: #2185D0;
   background-color: #061A40 !important;
-  height: 500px;
-  padding: 50px 50px 0px !important;
-  min-height: 470px;
-  max-height: 500px;
 }
 .link {
   text-decoration: underline !important;

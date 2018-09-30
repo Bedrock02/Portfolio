@@ -1,7 +1,9 @@
 /*******************************
         Global Overrides
 *******************************/
-
+html {
+  scroll-behavior: smooth;
+}
 .work-logos {
   padding: 100px 0;
   font-size: 50px;
@@ -35,4 +37,16 @@
 
 .ui.secondary.pointing.menu .active.item {
   border-color: white !important;
+}
+
+.ui.menu .item {
+  color: #B9D6F2 !important;
+}
+
+.ui.secondary.pointing.menu .active.item {
+  color: white !important;
+}
+
+#about div.column {
+  padding: 50px !important;
 }

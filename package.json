@@ -4,6 +4,13 @@
   "version": "1.0.0",
   "author": "Richard Blechinger <me@blechi.at>",
   "dependencies": {
+    "lodash": ">=4.17.13",
+    "lodash-es": ">=4.17.14",
+    "mem": ">=4.0.0",
+    "js-yaml": ">=3.13.1",
+    "jquery": ">=3.4.0",
+    "webpack-dev-server": ">=3.1.11",
+    "cryptiles": ">=4.1.2",
     "gatsby": "next",
     "gatsby-plugin-less": "^2.0.0-beta.5",
     "gatsby-plugin-react-helmet": "next",

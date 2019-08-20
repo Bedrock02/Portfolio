@@ -7,6 +7,7 @@ import smImage from '../assets/img/sm_logo.png';
 import tunein from '../assets/img/tunein.jpg';
 import dnt from '../assets/img/dt_logo_robot.png';
 import StaticForm from '../components/StaticForm/';
+import nomad from '../assets/img/nomad_logo.png';
 
 const IndexPage = () => (
   <Layout>
@@ -25,10 +26,17 @@ const IndexPage = () => (
       </Grid.Column>
 
       <Grid.Column className='work-logos' stackable="true" textAlign="center" width={8}>
+        <Image centered src={nomad} size="medium" />
+      </Grid.Column>
+      <Grid.Column stackable="true" textAlign="center" width={8}>
+        <h2>2019 - Present</h2>
+      </Grid.Column>
+
+      <Grid.Column className='work-logos' stackable="true" textAlign="center" width={8}>
         <Image centered src={dnt} size="medium" />
       </Grid.Column>
       <Grid.Column stackable="true" textAlign="center" width={8}>
-        <h2>2018 - Present</h2>
+        <h2>2018 - 2019</h2>
       </Grid.Column>
 
       <Grid.Column className='work-logos' stackable="true" textAlign="center" width={8}>

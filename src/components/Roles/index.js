@@ -17,6 +17,7 @@ const Roles = ({ isHorizontal }) => (
         <List.Item><Icon name='react' size='big' /></List.Item>
         <List.Item><Icon name='python' size='big' /></List.Item>
         <List.Item><Icon name='git' size='big' /></List.Item>
+        <List.Item><Icon name='docker' size='big' /></List.Item>
       </List>
     </Grid.Column>
 
@@ -28,6 +29,7 @@ const Roles = ({ isHorizontal }) => (
       <List>
         <List.Item>Non Profit Organizations</List.Item>
         <List.Item>High School/College</List.Item>
+        <List.Item>Tech Communities</List.Item>
       </List>
     </Grid.Column>
 

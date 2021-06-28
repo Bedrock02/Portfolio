@@ -8,13 +8,14 @@ import tunein from '../assets/img/tunein.jpg';
 import dnt from '../assets/img/dt_logo_robot.png';
 import StaticForm from '../components/StaticForm/';
 import nomad from '../assets/img/nomad_logo.png';
+import profilePicture from '../assets/img/profile-picture.jpg';
 
 const IndexPage = () => (
   <Layout>
     <Grid.Row style={{marginTop: "50px"}}centered padded="vertically">
       <Grid.Column textAlign="center">
-        <Image style={{marginTop: '20px'}} centered rounded src="https://goo.gl/93WXBV" size="medium" />
-        <h2 className={indexStyles.wepa}> My name is Steven, I am a Latino developer who is looking to make your app feel "WEPA"!</h2>
+        <Image style={{marginTop: '20px'}} centered rounded src={profilePicture} size="medium" />
+        <h2 className={indexStyles.wepa}> My name is Steven, I am a Software Engineer who is looking to make your app feel "WEPA"!</h2>
       </Grid.Column>
     </Grid.Row>
 

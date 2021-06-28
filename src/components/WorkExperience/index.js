@@ -1,10 +1,11 @@
 import React from 'react';
 import { Image, Grid } from 'semantic-ui-react';
-import nomad from '../../assets/img/nomad_logo.png';
-import smImage from '../../assets/img/sm_logo.png';
-import tunein from '../../assets/img/tunein.jpg';
-import dnt from '../../assets/img/dt_logo_robot.png';
-
+import {
+    nomad,
+    smImage,
+    tunein,
+    dnt,
+} from '../../assets/img'
 
 const WorkExperience = () =>(
     <Grid.Row id="work" className="work-experience" centered verticalAlign="middle" style={{padding: "100px 0"}}>

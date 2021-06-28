@@ -17,6 +17,8 @@ const Roles = ({ isHorizontal }) => (
         <List.Item><Icon name='react' size='big' /></List.Item>
         <List.Item><Icon name='python' size='big' /></List.Item>
         <List.Item><Icon name='git' size='big' /></List.Item>
+        <List.Item><Icon name='docker' size='big' /></List.Item>
+        <List.Item><Icon name='aws' size='big' /></List.Item>
       </List>
     </Grid.Column>
 
@@ -28,6 +30,7 @@ const Roles = ({ isHorizontal }) => (
       <List>
         <List.Item>Non Profit Organizations</List.Item>
         <List.Item>High School/College</List.Item>
+        <List.Item>Tech Communities</List.Item>
       </List>
     </Grid.Column>
 
@@ -39,12 +42,12 @@ const Roles = ({ isHorizontal }) => (
       <List>
         <List.Item>
           <a className={rolesStyles.link} target="_blank" rel="noopener noreferrer" href="https://www.surveymonkey.com/mp/diversity-and-inclusion/">
-            Founded Blatinos at SurveyMonkey
+            Founded Blatinos: first Employee Resource Group at SurveyMonkey
           </a>
         </List.Item>
         <List.Item>
           <a className={rolesStyles.link} target="_blank" rel="noopener noreferrer" href="https://medium.com/@Bedrock02/fundraising-for-the-future-of-tech-2353768d813a">
-            Donation to Code2040
+            Fundraising For The Future Of Tech
           </a>
         </List.Item>
         <List.Item>

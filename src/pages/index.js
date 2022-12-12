@@ -12,7 +12,7 @@ import resume from '../assets/files/Steven_Jimenez_Resume.pdf'
 
 const IndexPage = () => (
   <Layout>
-    <Grid.Row style={{marginTop: "50px"}}centered padded="vertically">
+    <Grid.Row style={{marginTop: "150px"}}centered padded="vertically">
       <Grid.Column textAlign="center">
         <Image style={{marginTop: '20px'}} centered rounded src={profilePicture} size="medium" />
         <div>
@@ -29,13 +29,6 @@ const IndexPage = () => (
 
     <Roles isHorizontal={false}/>
     <WorkExperience />
-
-    
-    <Grid.Row>
-      <Grid.Column>
-        <StaticForm />
-      </Grid.Column>
-    </Grid.Row>
   </Layout>
 );
 export default IndexPage;

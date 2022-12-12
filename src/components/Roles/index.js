@@ -2,6 +2,8 @@ import React from 'react';
 import { Grid, Icon, List } from 'semantic-ui-react';
 import rolesStyles from './roles.module.css';
 
+const toolNames = ['html5', 'sass', 'js', 'react', 'python', 'git', 'docker', 'aws']
+
 const Roles = ({ isHorizontal }) => (
   <Grid.Row id="about" columns={3} className={rolesStyles.group}>
     <Grid.Column textAlign='center' className={rolesStyles.dev}>
@@ -11,14 +13,9 @@ const Roles = ({ isHorizontal }) => (
         My design approach is simple, clean and crisp.</p>
       <h3>Tool Kit</h3>
       <List horizontal>
-        <List.Item><Icon name='html5' size='big'/></List.Item>
-        <List.Item><Icon name='sass' size='big' /></List.Item>
-        <List.Item><Icon name='js' size='big' /></List.Item>
-        <List.Item><Icon name='react' size='big' /></List.Item>
-        <List.Item><Icon name='python' size='big' /></List.Item>
-        <List.Item><Icon name='git' size='big' /></List.Item>
-        <List.Item><Icon name='docker' size='big' /></List.Item>
-        <List.Item><Icon name='aws' size='big' /></List.Item>
+        {toolNames.map( name => (
+          <List.Item><Icon name={name} size='big'/></List.Item>
+        ))}
       </List>
     </Grid.Column>
 
@@ -41,8 +38,8 @@ const Roles = ({ isHorizontal }) => (
       <h3>Contributions</h3>
       <List>
         <List.Item>
-          <a className={rolesStyles.link} target="_blank" rel="noopener noreferrer" href="https://www.surveymonkey.com/mp/diversity-and-inclusion/">
-            Founded Blatinos: first Employee Resource Group at SurveyMonkey
+          <a className={rolesStyles.link} target="_blank" rel="noopener noreferrer" href="https://www.pursuit.org/volunteer">
+            Mock Interviews With Pursuit
           </a>
         </List.Item>
         <List.Item>

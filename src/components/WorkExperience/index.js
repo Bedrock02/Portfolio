@@ -24,7 +24,7 @@ const WorkExperience = () =>(
         <Grid.Column stackable="true" textAlign="center" width={16}>
             <h1>Work Experience</h1>
         </Grid.Column>
-        <WorkItem image={even} date={'2019 - 2022'}/>
+        <WorkItem image={even} date={'2021 - 2022'}/>
         <WorkItem image={nomad} date={'2019 - 2021'}/>
         <WorkItem image={dnt} date={'2018 - 2019'}/>
         <WorkItem image={smImage} date={'2015 - 2018'}/>

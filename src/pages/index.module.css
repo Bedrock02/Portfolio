@@ -2,7 +2,7 @@
   padding: 50px;
 }
 
-.fadeIn h2 {
+.fadeIn {
   animation: fadeIn 5s;
   animation-fill-mode: forwards;
   animation-duration: 1s;

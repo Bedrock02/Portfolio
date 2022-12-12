@@ -8,7 +8,7 @@ const Roles = ({ isHorizontal }) => (
   <Grid.Row id="about" columns={3} className={rolesStyles.group}>
     <Grid.Column textAlign='center' className={rolesStyles.dev}>
       <Icon name='computer' size='huge'/>
-      <h2>Web Developer</h2>
+      <h2>Software Engineer</h2>
       <p>My passion is creating web applications with the latest and greatest tools.
         My design approach is simple, clean and crisp.</p>
       <h3>Tool Kit</h3>

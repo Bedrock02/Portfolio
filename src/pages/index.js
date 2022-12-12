@@ -19,7 +19,7 @@ const IndexPage = () => (
         </div>
         <div className={indexStyles.fadeIn}>
           <h2 className={indexStyles.wepa}> "Problems I gravitate towards are areas of pain points and weakness."</h2>
-          <AnimatedButton secondary title='Resume' iconName='file pdf outline' onClick={() => {
+          <AnimatedButton primary title='Resume' iconName='file pdf outline' onClick={() => {
             window.open(resume, '_blank')
           }} />
         </div>

@@ -7,6 +7,7 @@ import indexStyles from './index.module.css';
 import StaticForm from '../components/StaticForm/';
 import profilePicture from '../assets/img/profile2.jpg';
 import { AnimatedButton } from '../components/ResumeButton/ResumeButton.jsx';
+import resume from '../assets/files/Steven_Jimenez_Resume.pdf'
 
 
 const IndexPage = () => (
@@ -20,7 +21,7 @@ const IndexPage = () => (
         <div className={indexStyles.fadeIn}>
           <h2 className={indexStyles.wepa}> "Problems I gravitate towards are areas of pain points and weakness."</h2>
           <AnimatedButton secondary title='Resume' iconName='file pdf outline' onClick={() => {
-            window.open('/static/Steven_Jimenez_Resume.pdf', '_blank')
+            window.open(resume, '_blank')
           }} />
         </div>
       </Grid.Column>

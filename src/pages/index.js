@@ -5,7 +5,7 @@ import Roles from '../components/Roles';
 import WorkExperience from '../components/WorkExperience'
 import indexStyles from './index.module.css';
 import StaticForm from '../components/StaticForm/';
-import profilePicture from '../assets/img/profile-picture.jpg';
+import profilePicture from '../assets/img/profile2.jpg';
 
 const IndexPage = () => (
   <Layout>

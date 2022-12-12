@@ -12,7 +12,12 @@ const IndexPage = () => (
     <Grid.Row style={{marginTop: "50px"}}centered padded="vertically">
       <Grid.Column textAlign="center">
         <Image style={{marginTop: '20px'}} centered rounded src={profilePicture} size="medium" />
-        <h2 className={indexStyles.wepa}> My name is Steven, I am a Software Engineer who is looking to make your app feel "WEPA"!</h2>
+        <div>
+          <h1 className={indexStyles.wepa}>Hey, I'm Steven Jimenez.</h1>
+        </div>
+        <div className={indexStyles.fadeIn}>
+          <h2 className={indexStyles.wepa}> "Problems I gravitate towards are areas of pain points and weakness."</h2>
+        </div>
       </Grid.Column>
     </Grid.Row>
 

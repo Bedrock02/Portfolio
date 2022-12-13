@@ -1,9 +1,9 @@
 import React from 'react';
 import { Button, Icon } from 'semantic-ui-react'
 
-export const AnimatedButton = ({title, iconName, onClick, ...otherProps}) => {
+const AnimatedButton = ({title, iconName, onClick, ...otherProps}) => {
   return (
-    <div>
+    <div style={{padding: '50px 0px'}}>
       <Button {...otherProps} onClick={onClick} animated>
         <Button.Content visible>{title}</Button.Content>
         <Button.Content hidden>
@@ -13,3 +13,5 @@ export const AnimatedButton = ({title, iconName, onClick, ...otherProps}) => {
     </div>
   )
 }
+
+export default AnimatedButton;

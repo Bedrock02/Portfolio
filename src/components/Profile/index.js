@@ -17,7 +17,7 @@ const Profile = () => (
       <Grid.Column textAlign="center">
         <div className={fadeIn}>
           <Header as="h1">Hey, I'm <span className={fullName}>Steven Jimenez.</span></Header>
-          <Header.Subheader>"Problems I gravitate towards are areas of pain points and weakness."</Header.Subheader>
+          <Header.Subheader as="h3">"Problems I gravitate towards are areas of pain points and weakness."</Header.Subheader>
           <AnimatedButton primary title='Resume' iconName='file pdf outline' onClick={() => {
             window.open(resume, '_blank')
           }} />

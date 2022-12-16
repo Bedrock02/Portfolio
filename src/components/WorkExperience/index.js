@@ -45,11 +45,11 @@ const workExperienceData = [
 const WorkItem = ({ image, href, date, title }) => (
     <Grid.Row className={work} centered verticalAlign="middle">
         <Grid.Column className='work-logos' stackable="true" textAlign="center" width={8}>
-        <div className={grow}>
-            <a href={href} target='_blank'>
-                <Image centered src={image} size="medium" />
-            </a>
-        </div>
+            <div className={grow}>
+                <a href={href} target='_blank'>
+                    <Image centered src={image} size="medium" />
+                </a>
+            </div>
         </Grid.Column>
         <Grid.Column stackable="true" textAlign="center" width={8}>
             <h2>{date}</h2>

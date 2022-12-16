@@ -21,7 +21,6 @@
     "react-dom": "^16.4.1",
     "react-helmet": "^5.2.0",
     "react-typography": "^0.16.13",
-    "semantic-ui-less": "^2.3.3",
     "semantic-ui-react": "^0.82.1",
     "typography": "^0.16.17",
     "typography-theme-irving": "^0.15.10",
@@ -35,10 +34,14 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write '**/*.js'",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "node scripts/semantic-ui-less-postinstall.js"
   },
   "devDependencies": {
-    "prettier": "^1.13.7"
+    "find-in-files": "^0.5.0",
+    "ncp": "^2.0.0",
+    "prettier": "^1.13.7",
+    "semantic-ui-less": "^2.5.0"
   },
   "repository": {
     "type": "git",

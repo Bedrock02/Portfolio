@@ -15,10 +15,6 @@ const linkData = [
     iconName: 'medium',
   },
   {
-    href: 'https://www.instagram.com/viens_voir02/',
-    iconName: 'instagram',
-  },
-  {
     href: 'https://www.strava.com/athletes/6644207',
     iconName: 'strava',
   },
@@ -30,11 +26,11 @@ const linkData = [
 
 const Footer = () => (
   <Grid>
-    <Grid.Row className="footer" textAlign="center" columns={6}>
+    <Grid.Row className="footer" textAlign="center" columns={5}>
       {linkData.map( ({ href, iconName }) => (
         <Grid.Column textAlign="center">
           <a href={href} target="_blank" rel="noopener noreferrer">
-            <Icon link name={iconName} size='huge' />
+            <Icon link name={iconName} size='big' />
           </a>
         </Grid.Column>
       ))}

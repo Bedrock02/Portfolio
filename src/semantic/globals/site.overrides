@@ -1,0 +1,44 @@
+/*******************************
+        Global Overrides
+*******************************/
+html {
+  scroll-behavior: smooth;
+}
+.work-logos {
+  padding: 100px 0;
+  font-size: 50px;
+}
+
+.footer {
+  background: #353535;
+  color: #FFFFFF;
+}
+
+.footer a {
+  color: #FFFFFF;
+}
+
+.midnight-blue {
+  color: #B9D6F2 !important;
+}
+
+.static-form {
+  padding: 100px;
+  background: #2185D0;
+}
+
+.ui.secondary.pointing.menu .active.item {
+  border-color: white !important;
+}
+
+.ui.menu .item {
+  color: #B9D6F2 !important;
+}
+
+.ui.secondary.pointing.menu .active.item {
+  color: white !important;
+}
+
+#about div.column {
+  padding: 50px !important;
+}

@@ -53,13 +53,13 @@ const Roles = () => (
       <p>In order to see the change we want to see, we as individuals need to invest in our communities.</p>
       <h3>Contributions</h3>
       <List>
-        {leaderExamples.map( ({title, href}) => {
-        <List.Item>
-          <a className={link} target="_blank" rel="noopener noreferrer" href={href}>
-            {title}
-          </a>
-        </List.Item>
-        })}
+        {leaderExamples.map( ({title, href}) => (
+          <List.Item>
+            <a className={link} target="_blank" rel="noopener noreferrer" href={href}>
+              {title}
+            </a>
+          </List.Item>
+        ))}
       </List>
     </Grid.Column>
   </Grid.Row>

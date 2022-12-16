@@ -1,12 +1,28 @@
 import React from 'react';
 import { Grid, Icon, List } from 'semantic-ui-react';
-import rolesStyles from './roles.module.css';
+import {group, dev, speaking, leader, link} from './roles.module.css';
 
 const toolNames = ['html5', 'sass', 'js', 'react', 'python', 'git', 'docker', 'aws']
+const leaderExamples = [
+  {
+    title: 'Mock Interviews With Pursuit',
+    href: 'https://www.pursuit.org/volunteer',
+  },
+  {
+    title: 'Fundraising For The Future Of Tech',
+    href: 'https://medium.com/@Bedrock02/fundraising-for-the-future-of-tech-2353768d813a'
+  },
+  {
+    title: 'Content Creation for The Longhairs',
+    href: 'https://blog.thelonghairs.us/beyond-the-locks-alejandro-carillo/'
 
-const Roles = ({ isHorizontal }) => (
-  <Grid.Row id="about" columns={3} className={rolesStyles.group}>
-    <Grid.Column textAlign='center' className={rolesStyles.dev}>
+  }
+]
+
+
+const Roles = () => (
+  <Grid.Row id="about" columns={3} className={group}>
+    <Grid.Column textAlign='center' className={dev}>
       <Icon name='computer' size='huge'/>
       <h2>Software Engineer</h2>
       <p>My passion is creating web applications with the latest and greatest tools.
@@ -19,7 +35,7 @@ const Roles = ({ isHorizontal }) => (
       </List>
     </Grid.Column>
 
-    <Grid.Column textAlign='center' className={rolesStyles.speaking}>
+    <Grid.Column textAlign='center' className={speaking}>
       <Icon name='microphone' size='huge' style={{color: "white"}}/>
       <h2>Public Speaker</h2>
       <p>Our stories should be shared with the future generation. My story is unique and relatable to many.</p>
@@ -31,27 +47,19 @@ const Roles = ({ isHorizontal }) => (
       </List>
     </Grid.Column>
 
-    <Grid.Column textAlign='center' className={rolesStyles.leader}>
+    <Grid.Column textAlign='center' className={leader}>
       <Icon name='handshake outline' size='huge' color="blue"/>
       <h2>Community Leader</h2>
       <p>In order to see the change we want to see, we as individuals need to invest in our communities.</p>
       <h3>Contributions</h3>
       <List>
+        {leaderExamples.map( ({title, href}) => {
         <List.Item>
-          <a className={rolesStyles.link} target="_blank" rel="noopener noreferrer" href="https://www.pursuit.org/volunteer">
-            Mock Interviews With Pursuit
+          <a className={link} target="_blank" rel="noopener noreferrer" href={href}>
+            {title}
           </a>
         </List.Item>
-        <List.Item>
-          <a className={rolesStyles.link} target="_blank" rel="noopener noreferrer" href="https://medium.com/@Bedrock02/fundraising-for-the-future-of-tech-2353768d813a">
-            Fundraising For The Future Of Tech
-          </a>
-        </List.Item>
-        <List.Item>
-          <a className={rolesStyles.link} target="_blank" rel="noopener noreferrer" href="https://blog.thelonghairs.us/beyond-the-locks-alejandro-carillo/">
-            Content Creation for The Longhairs
-          </a>
-        </List.Item>
+        })}
       </List>
     </Grid.Column>
   </Grid.Row>

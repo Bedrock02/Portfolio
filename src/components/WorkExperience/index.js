@@ -1,6 +1,6 @@
 import React from 'react';
 import { Image, Grid } from 'semantic-ui-react';
-import workStyles from './work.module.css'
+import { work, experience } from './work.module.css'
 import {
     nomad,
     smImage,
@@ -10,7 +10,7 @@ import {
 } from '../../assets/img'
 
 const WorkItem = ({ image, date }) => (
-    <Grid.Row className={workStyles.work} centered verticalAlign="middle">
+    <Grid.Row className={work} centered verticalAlign="middle">
         <Grid.Column className='work-logos' stackable="true" textAlign="center" width={8}>
             <Image centered src={image} size="medium" />
         </Grid.Column>
@@ -22,7 +22,7 @@ const WorkItem = ({ image, date }) => (
 
 const WorkExperience = () =>(
     <Grid padded>
-        <Grid.Row id="work" className="work-experience" centered verticalAlign="middle" style={{ padding: "100px 0" }}>
+        <Grid.Row id="work" className={experience} centered verticalAlign="middle" style={{ padding: "100px 0" }}>
             <Grid.Column stackable="true" textAlign="center" width={16}>
                 <h1>Work Experience</h1>
             </Grid.Column>

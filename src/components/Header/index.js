@@ -1,6 +1,6 @@
 import React from 'react';
 import { Icon, Menu } from 'semantic-ui-react';
-import headerStyles from "./header.module.css";
+import { icon } from "./header.module.css";
 
 export class Header extends React.Component {
   constructor() {
@@ -24,7 +24,7 @@ export class Header extends React.Component {
           link={true}
           href="#home"
           >
-            <Icon disabled name='code' className={headerStyles.icon} />
+            <Icon disabled name='code' className={icon} />
         </ Menu.Item>
         <Menu.Item href="#about" link={true} name='about' active={activeItem === 'about'} onClick={this.handleItemClick} />
         <Menu.Item href="#work" link={true} name='work' active={activeItem === 'work'} onClick={this.handleItemClick} />

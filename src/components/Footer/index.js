@@ -1,34 +1,43 @@
 import React from 'react';
 import { Icon, Grid } from 'semantic-ui-react';
 
+const linkData = [
+  {
+    href: 'https://github.com/Bedrock02/',
+    iconName: 'github',
+  },
+  {
+    href: 'https://www.linkedin.com/in/steven-jimenez-7a435251/',
+    iconName: 'linkedin',
+  },
+  {
+    href: 'https://medium.com/@Bedrock02',
+    iconName: 'medium',
+  },
+  {
+    href: 'https://www.instagram.com/viens_voir02/',
+    iconName: 'instagram',
+  },
+  {
+    href: 'https://www.strava.com/athletes/6644207',
+    iconName: 'strava',
+  },
+  {
+    href: 'mailto:jimsteve91@gmail.com',
+    iconName: 'mail',
+  }
+]
+
 const Footer = () => (
   <Grid>
-    <Grid.Row className="footer" textAlign="center" style={{padding: "50px 0"}}>
-      <Grid.Column textAlign="center" width={3}>
-        <a href="https://github.com/Bedrock02/" target="_blank" rel="noopener noreferrer">
-          <Icon link name='github' size='huge'/>
-        </a>
-      </Grid.Column>
-      <Grid.Column textAlign="center" width={3}>
-        <a href="https://www.linkedin.com/in/steven-jimenez-7a435251/" target="_blank" rel="noopener noreferrer">
-          <Icon link name='linkedin' size='huge' />
-        </a>
-      </Grid.Column>
-      <Grid.Column textAlign="center" width={3}>
-        <a href="https://medium.com/@Bedrock02" target="_blank" rel="noopener noreferrer">
-          <Icon link name='medium' size='huge' />
-        </a>
-      </Grid.Column>
-      <Grid.Column textAlign="center" width={3}>
-        <a href="https://www.instagram.com/viens_voir02/" target="_blank" rel="noopener noreferrer">
-          <Icon link name='instagram' size='huge' />
-        </a>
-      </Grid.Column>
-      <Grid.Column textAlign="center" width={3}>
-        <a href="https://www.strava.com/athletes/6644207" target="_blank" rel="noopener noreferrer">
-          <Icon link name='strava' size='huge' />
-        </a>
-      </Grid.Column>
+    <Grid.Row className="footer" textAlign="center" columns={6}>
+      {linkData.map( ({ href, iconName }) => (
+        <Grid.Column textAlign="center">
+          <a href={href} target="_blank" rel="noopener noreferrer">
+            <Icon link name={iconName} size='huge' />
+          </a>
+        </Grid.Column>
+      ))}
     </Grid.Row>
   </Grid>
 )

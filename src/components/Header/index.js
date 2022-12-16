@@ -16,7 +16,7 @@ export class Header extends React.Component {
   render() {
     const { activeItem } = this.state;
     return (
-      <Menu style={{"background": "#353535"}} pointing secondary fixed="top">
+      <Menu style={{"background": "#353535"}} pointing secondary>
         <Menu.Item
           name='home'
           active={activeItem === 'home'}

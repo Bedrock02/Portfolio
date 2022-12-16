@@ -9,13 +9,49 @@ import {
     even,
 } from '../../assets/img'
 
-const WorkItem = ({ image, date }) => (
+const workExperienceData = [
+    {
+        image: even,
+        href: 'https://evenfinancial.com/',
+        date: '2021 - 2022',
+        title: 'Software Engineer',
+    },
+    {
+        image: nomad,
+        href: 'https://nomadhealth.com/',
+        date: '2019 - 2021',
+        title: 'Technical Lead'
+    },
+    {
+        image: dnt,
+        href: 'https://domandtom.com/',
+        date: '2018 - 2019',
+        title: 'Technical Lead'
+    },
+    {
+        image: smImage,
+        href: 'https://www.surveymonkey.com/',
+        date: '2015 - 2018',
+        title: 'Software Engineer'
+    },
+    {
+        image: tunein,
+        href: 'https://tunein.com/',
+        date: '2014 - 2014',
+        title: 'Software Engineer'
+    },
+]
+
+const WorkItem = ({ image, href, date, title }) => (
     <Grid.Row className={work} centered verticalAlign="middle">
         <Grid.Column className='work-logos' stackable="true" textAlign="center" width={8}>
-            <Image centered src={image} size="medium" />
+            <a href={href} target='_blank'>
+                <Image centered src={image} size="medium" />
+            </a>
         </Grid.Column>
         <Grid.Column stackable="true" textAlign="center" width={8}>
             <h2>{date}</h2>
+            <h2>{title}</h2>
         </Grid.Column>
     </Grid.Row>
 )
@@ -27,10 +63,9 @@ const WorkExperience = () =>(
                 <h1>Work Experience</h1>
             </Grid.Column>
         </Grid.Row>
-        <WorkItem image={even} date={'2021 - 2022'} />
-        <WorkItem image={nomad} date={'2019 - 2021'} />
-        <WorkItem image={dnt} date={'2018 - 2019'} />
-        <WorkItem image={smImage} date={'2015 - 2018'} />
-        <WorkItem image={tunein} date={'2014 - 2014'} /></Grid>
+        {workExperienceData.map( ({image, href, date, title}) => (
+            <WorkItem image={image} href={href} date={date} title={title} />
+        ))}
+    </Grid>
 );
 export default WorkExperience;

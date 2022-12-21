@@ -12,6 +12,7 @@ html {
 .footer {
   background: #353535;
   color: #FFFFFF;
+  margin-top: 50px;
 }
 
 .footer a {

@@ -28,6 +28,7 @@ export class Header extends React.Component {
         </ Menu.Item>
         <Menu.Item href="#about" link={true} name='about' active={activeItem === 'about'} onClick={this.handleItemClick} />
         <Menu.Item href="#work" link={true} name='work' active={activeItem === 'work'} onClick={this.handleItemClick} />
+        <Menu.Item href="#life" link={true} name='life' active={activeItem === 'life'} onClick={this.handleItemClick} />
       </Menu>
     );
   }

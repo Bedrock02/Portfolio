@@ -1,11 +1,11 @@
 import React from 'react';
-import { Grid, Card } from 'semantic-ui-react';
+import { Grid, } from 'semantic-ui-react';
 import VideoLooper from 'react-video-looper';
 import cyclingVideo from '../../assets/videos/cycling.mp4'
 import timessquare from '../../assets/videos/timessquare.mp4'
 import botanical from '../../assets/videos/botanical-garden.mp4'
 import lucky from '../../assets/videos/lucky-winter.mp4'
-import { blurb, videos } from './hobbies.module.css'
+import { blurb } from './hobbies.module.css'
 
 const cyclingDescription = 'I got into cycling at 22 years old when I joined my dad’s Saturday ride as a way to spend more time with him. Little did I know that cycling would become my way of life, and not just a Saturday hobby.'
 const nature = `Nature brings me a sense of peace and tranquility that I can't find anywhere else. Its beauty and diversity are a constant source of inspiration and awe for me.`
@@ -21,7 +21,7 @@ const HobbyDescription = ({ header, description }) => (
 
 const Hobbies = () => (
   <>
-      <Grid.Row centered verticalAlign='middle'>
+      <Grid.Row id="life" centered verticalAlign='middle'>
         <Grid.Column textAlign="center" width={16} style={{ padding: "100px 0" }}>
           <h1>Life Outside Of Work</h1>
         </Grid.Column>

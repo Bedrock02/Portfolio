@@ -6,7 +6,7 @@
        Fonts
 --------------------*/
 
-@fontName          : 'PT Serif';
+@fontName          : 'Chivo Mono';
 @fontSmoothing     : antialiased;
 
 @headerFont        : @fontName, 'Helvetica Neue', Arial, Helvetica, sans-serif;
@@ -380,7 +380,7 @@
 
 /* For source only. Modified in gulp for dist */
 @imagePath : '../../themes/default/assets/images';
-@fontPath  : '../../themes/default/assets/fonts';
+@fontPath : '~semantic-ui-less/themes/default/assets/fonts';
 
 /*-------------------
        Em Sizes

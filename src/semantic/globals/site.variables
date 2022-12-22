@@ -14,11 +14,12 @@
 
 @googleFontName    : @fontName;
 @importGoogleFonts : true;
-@googleFontSizes   : '400,700,400italic,700italic';
+@googleFontSizes   : 'ital,wght@0,400;0,700;1,400;1,700&display=swap';
 @googleSubset      : 'latin';
 
 @googleProtocol    : 'https://';
-@googleFontRequest : '@{googleFontName}:@{googleFontSizes}&subset=@{googleSubset}';
+@googleFontRequest : '@{googleFontName}:@{googleFontSizes}';
+
 
 
 @bold              : bold;

@@ -2,7 +2,6 @@ import React from 'react';
 import { fadeIn, fullName } from './profile.module.css';
 import profilePicture from '../../assets/img/profile2.jpg';
 import AnimatedButton from '../AnimatedButton';
-import resume from '../../assets/files/Steven_Jimenez_Resume.pdf';
 import { Image, Grid, Header } from 'semantic-ui-react';
 
 const Profile = () => (
@@ -19,7 +18,7 @@ const Profile = () => (
           <Header as="h1">Hey, I'm <span className={fullName}>Steven Jimenez.</span></Header>
           <Header.Subheader as="h3">"Problems I gravitate towards are areas of pain points and weakness."</Header.Subheader>
           <AnimatedButton primary title='Resume' iconName='file pdf outline' onClick={() => {
-            window.open(resume, '_blank')
+            window.open("https://bedrock02.github.io/resume/", '_blank')
           }} />
         </div>
       </Grid.Column>

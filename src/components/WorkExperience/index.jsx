@@ -6,7 +6,7 @@ import {
 } from './work.module.css';
 import { workExperienceData } from './data';
 
-function WorkItem(item) {
+function WorkItem({ item }) {
   const {
     image, href, date, title, tools,
   } = item;
@@ -46,7 +46,7 @@ WorkItem.propTypes = {
     href: PropTypes.string.isRequired,
     date: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
-    tools: PropTypes.string.isRequired,
+    tools: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
   }).isRequired,
 };
 

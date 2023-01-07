@@ -22,7 +22,6 @@ function Profile() {
             </Header>
             <Header.Subheader as="h3">&quote;Problems I gravitate towards are areas of pain points and weakness.&quote;</Header.Subheader>
             <AnimatedButton
-              primary
               title="Resume"
               iconName="file pdf outline"
               onClick={() => {

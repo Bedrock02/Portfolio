@@ -42,22 +42,12 @@ function WorkItem(item) {
 
 WorkItem.propTypes = {
   item: PropTypes.shape({
-    image: PropTypes.string,
-    href: PropTypes.string,
-    date: PropTypes.string,
-    title: PropTypes.string,
-    tools: PropTypes.string,
-  }),
-};
-
-WorkItem.defaultProps = {
-  item: PropTypes.shape({
-    image: '',
-    href: '#',
-    date: '',
-    title: 'title',
-    tools: [],
-  }),
+    image: PropTypes.string.isRequired,
+    href: PropTypes.string.isRequired,
+    date: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    tools: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 function WorkExperience() {

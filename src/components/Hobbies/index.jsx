@@ -15,13 +15,8 @@ function HobbyDescription({ header, description }) {
 }
 
 HobbyDescription.propTypes = {
-  header: PropTypes.string,
-  description: PropTypes.string,
-};
-
-HobbyDescription.defaultProps = {
-  header: 'Header',
-  description: 'Description',
+  header: PropTypes.string.isRequired,
+  description: PropTypes.isRequired,
 };
 
 function Hobbies() {

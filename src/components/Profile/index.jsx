@@ -20,7 +20,7 @@ function Profile() {
               {'Hey, I\'m'}
               <span className={fullName}> Steven Jimenez.</span>
             </Header>
-            <Header.Subheader as="h3">&quot;Problems I gravitate towards are areas of pain points and weakness.&quot;</Header.Subheader>
+            <Header.Subheader as="h3">{`"I turn cafecito ☕ into <code> and problems into solutions 🎉"`}</Header.Subheader>
             <AnimatedButton
               title="Resume"
               iconName="file pdf outline"

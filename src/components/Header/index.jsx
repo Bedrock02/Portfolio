@@ -22,6 +22,7 @@ export default function Header() {
       <Menu.Item href="#about" link name="about" active={activeItem === 'about'} onClick={handleItemClick} />
       <Menu.Item href="#work" link name="work" active={activeItem === 'work'} onClick={handleItemClick} />
       <Menu.Item href="#life" link name="life" active={activeItem === 'life'} onClick={handleItemClick} />
+      <Menu.Item href="https://blog.wepadev.com" link name="blog" target="_blank" rel="noopener noreferrer" />
     </Menu>
   );
 }

@@ -12,7 +12,7 @@ export const workExperienceData = [
     image: lululemon,
     href: 'https://lululemon.com/',
     date: '2023 - Present',
-    title: 'Senior Fullstack Engineer',
+    title: 'Senior Full Stack Engineer',
     tools: [
       'Next.Js',
       'Typescript',

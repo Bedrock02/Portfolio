@@ -1,12 +1,25 @@
 import {
+  dnt,
+  even,
+  lululemon,
   nomad,
   smImage,
   tunein,
-  dnt,
-  even,
 } from '../../assets/img';
 
 export const workExperienceData = [
+  {
+    image: lululemon,
+    href: 'https://lululemon.com/',
+    date: '2023 - Present',
+    title: 'Senior Fullstack Engineer',
+    tools: [
+      'Next.Js',
+      'Typescript',
+      'Stripe',
+      'Sanity.io',
+    ],
+  },
   {
     image: even,
     href: 'https://evenfinancial.com/',

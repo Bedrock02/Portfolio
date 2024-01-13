@@ -11,7 +11,7 @@ export const workExperienceData = [
   {
     image: lululemon,
     href: 'https://lululemon.com/',
-    date: '2023 - Present',
+    date: 'Apr. 2023 - Dec. 2023',
     title: 'Senior Full Stack Engineer',
     tools: [
       'Next.Js',

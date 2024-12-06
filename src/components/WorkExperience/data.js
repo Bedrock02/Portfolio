@@ -5,9 +5,22 @@ import {
   nomad,
   smImage,
   tunein,
+  peloton,
 } from '../../assets/img';
 
 export const workExperienceData = [
+  {
+    image: peloton,
+    href: 'https://onepeloton.com/',
+    date: 'Feb. 2024 - Present',
+    title: 'Senior Software Engineer',
+    tools: [
+      'Next.Js',
+      'Typescript',
+      'GraphQL',
+      'Contentful',
+    ],
+  },
   {
     image: lululemon,
     href: 'https://lululemon.com/',

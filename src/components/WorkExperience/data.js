@@ -12,7 +12,7 @@ export const workExperienceData = [
   {
     image: peloton,
     href: 'https://onepeloton.com/',
-    date: 'Feb. 2024 - Present',
+    date: 'Feb. 2024 - Feb. 2026',
     title: 'Senior Software Engineer',
     tools: [
       'Next.Js',

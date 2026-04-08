@@ -1,6 +1,4 @@
 import React from 'react';
-import { Icon, List } from 'semantic-ui-react';
-import { toolNames, leaderExamples } from './data';
 
 function Roles() {
   return (
@@ -9,66 +7,32 @@ function Roles() {
 
       <div className="about-bio">
         <p>
-          {`I'm a software engineer passionate about building web applications with clean, modern tools.
-          With over a decade of experience across startups and enterprises, I focus on performant,
-          accessible interfaces and the teams that build them.`}
+          Full-stack engineer with 10+ years shipping production systems at scale —
+          from high-traffic e-commerce checkout flows to experimentation platforms and
+          performance-critical user journeys. I specialize in frontend-leaning full-stack
+          work: React, TypeScript, and Next.js on the client; Go and Python on the backend;
+          AWS for infrastructure that holds up under load.
         </p>
         <p>
-          {`Beyond engineering, I give back through public speaking and community leadership —
-          mentoring aspiring developers and volunteering with organizations like `}
-          <a href="https://www.pursuit.org/volunteer" target="_blank" rel="noopener noreferrer">
-            Pursuit
-          </a>
-          {`.`}
+          My work has moved real numbers: launched a tiered delivery experience at{' '}
+          <a href="https://onepeloton.com/" target="_blank" rel="noopener noreferrer">Peloton</a>
+          {' '}that generated $0.4M revenue in month one, scaled checkout throughput from
+          60 → 120 orders/minute, improved Guest Pass conversion by 85%, and drove a +16%
+          application conversion lift at{' '}
+          <a href="https://nomadhealth.com/" target="_blank" rel="noopener noreferrer">Nomad Health</a>.
+          I own experimentation end-to-end — scoping, instrumenting, and analyzing A/B tests
+          with Optimizely and Split.io — and treat observability (Datadog, Sentry, k6) as a
+          first-class engineering concern.
+        </p>
+        <p>
+          I&apos;m energized by the current AI moment and actively building with LLM-powered tooling.
+          I believe the next generation of great products will be defined by teams that can
+          move fast without sacrificing reliability — and that&apos;s exactly the intersection I
+          operate in: strong engineering fundamentals paired with a genuine excitement for
+          what&apos;s possible when AI capabilities are woven thoughtfully into the user experience.
         </p>
       </div>
 
-      <div className="role-grid">
-        <div className="role-card">
-          <Icon name="computer" size="large" />
-          <h3>Software Engineer</h3>
-          <p>
-            My passion is creating web applications with the latest tools.
-            Clean, crisp, and always performant.
-          </p>
-          <div className="role-tools">
-            {toolNames.map((name) => (
-              <Icon key={name} name={name} size="large" className="role-tool-icon" />
-            ))}
-          </div>
-        </div>
-
-        <div className="role-card">
-          <Icon name="microphone" size="large" />
-          <h3>Public Speaker</h3>
-          <p>
-            Our stories should be shared with future generations.
-            Mine is unique and relatable to many.
-          </p>
-          <List>
-            <List.Item>Non-profit organizations</List.Item>
-            <List.Item>High school &amp; college</List.Item>
-            <List.Item>Tech communities</List.Item>
-          </List>
-        </div>
-
-        <div className="role-card">
-          <Icon name="handshake outline" size="large" />
-          <h3>Community Leader</h3>
-          <p>
-            To see the change we want, we need to invest in our communities.
-          </p>
-          <List>
-            {leaderExamples.map(({ title, href }) => (
-              <List.Item key={href}>
-                <a target="_blank" rel="noopener noreferrer" href={href}>
-                  {title}
-                </a>
-              </List.Item>
-            ))}
-          </List>
-        </div>
-      </div>
     </section>
   );
 }

@@ -4,22 +4,23 @@ import { workExperienceData } from './data';
 
 function WorkItem({ item }) {
   const {
-    image, href, date, title, tools,
+    image, href, company, date, title, description, tools,
   } = item;
   return (
     <div className="work-card">
       <div className="work-date">{date}</div>
       <div className="work-details">
+        <div className="work-logo-wrapper">
+          <img src={image} alt={`${company} logo`} className="work-logo" />
+        </div>
         <h3 className="work-title">
-          <a href={href} target="_blank" rel="noreferrer" className="work-title-link">
+          <a href={href} target="_blank" rel="noreferrer" className="work-title-link" aria-label={`${title} at ${company} (opens in new tab)`}>
             {title}
-            <span className="work-arrow"> ↗</span>
+            <span className="work-arrow" aria-hidden="true"> ↗</span>
           </a>
         </h3>
-        <div className="work-logo-wrapper">
-          <img src={image} alt={title} className="work-logo" />
-        </div>
-        <ul className="work-tools">
+        <p className="work-description">{description}</p>
+        <ul className="work-tools" aria-label="Technologies used">
           {tools.map((tool) => (
             <li key={tool} className="work-pill">{tool}</li>
           ))}
@@ -33,8 +34,10 @@ WorkItem.propTypes = {
   item: PropTypes.shape({
     image: PropTypes.string.isRequired,
     href: PropTypes.string.isRequired,
+    company: PropTypes.string.isRequired,
     date: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
     tools: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
   }).isRequired,
 };
@@ -48,14 +51,6 @@ function WorkExperience() {
           <WorkItem key={item.href} item={item} />
         ))}
       </div>
-      <a
-        href="https://bedrock02.github.io/resume/"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="work-full-resume"
-      >
-        View Full Résumé ↗
-      </a>
     </section>
   );
 }

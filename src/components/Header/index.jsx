@@ -2,15 +2,15 @@ import React, { useState, useEffect } from 'react';
 
 const navItems = [
   { name: 'About', href: '#about' },
+  { name: 'Skills', href: '#skills' },
   { name: 'Experience', href: '#work' },
-  { name: 'Life', href: '#life' },
 ];
 
 export default function Header() {
   const [activeItem, setActiveItem] = useState('About');
 
   useEffect(() => {
-    const sectionIds = ['about', 'work', 'life'];
+    const sectionIds = ['about', 'skills', 'work'];
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -32,18 +32,22 @@ export default function Header() {
   }, []);
 
   return (
-    <nav className="sidebar-nav">
-      {navItems.map(({ name, href }) => (
-        <a
-          key={name}
-          href={href}
-          className={`sidebar-nav-item${activeItem === name ? ' active' : ''}`}
-          onClick={() => setActiveItem(name)}
-        >
-          <span className="sidebar-nav-line" />
-          <span className="sidebar-nav-text">{name}</span>
-        </a>
-      ))}
+    <nav className="sidebar-nav" aria-label="Primary">
+      {navItems.map(({ name, href }) => {
+        const isActive = activeItem === name;
+        return (
+          <a
+            key={name}
+            href={href}
+            className={`sidebar-nav-item${isActive ? ' active' : ''}`}
+            onClick={() => setActiveItem(name)}
+            aria-current={isActive ? 'true' : undefined}
+          >
+            <span className="sidebar-nav-line" aria-hidden="true" />
+            <span className="sidebar-nav-text">{name}</span>
+          </a>
+        );
+      })}
     </nav>
   );
 }

@@ -12,8 +12,10 @@ export const workExperienceData = [
   {
     image: peloton,
     href: 'https://onepeloton.com/',
+    company: 'Peloton',
     date: 'Feb. 2024 - Feb. 2026',
     title: 'Senior Software Engineer',
+    description: 'Owned the full shop and checkout experience, shipping revenue-driving features across delivery, experimentation, and social flows. Launched Tiered Delivery generating $0.4M in month one, improved Guest Pass conversion by 85%, and built an Optimizely-powered A/B framework that safely bucketed users into variant checkout experiences. Architected History Summary — a Go backend + React frontend — delivering transparency for used-hardware purchases. Led Holiday Readiness performance strategy, scaling shop throughput from 60 to 120 orders/minute using k6 load testing and Datadog monitoring adopted org-wide.',
     tools: [
       'Next.Js',
       'Typescript',
@@ -24,8 +26,10 @@ export const workExperienceData = [
   {
     image: lululemon,
     href: 'https://lululemon.com/',
+    company: 'lululemon',
     date: 'Apr. 2023 - Dec. 2023',
     title: 'Senior Full Stack Engineer',
+    description: 'Built and maintained e-commerce experiences for lululemon Studio using Next.js, integrating data from Shopify and headless CMS tooling. Designed and shipped an Account Transfers flow enabling users to seamlessly activate ownership from another account. Extended content models to support modular page development and implemented CI build and test validation on merge requests, measurably reducing regressions.',
     tools: [
       'Next.Js',
       'Typescript',
@@ -36,8 +40,10 @@ export const workExperienceData = [
   {
     image: even,
     href: 'https://evenfinancial.com/',
+    company: 'Even Financial',
     date: '2021 - 2022',
     title: 'Software Engineer',
+    description: 'Led frontend development for loan application experiences, refactoring form components and improving form-building mechanics across the loans vertical. Owned end-to-end A/B experimentation — launching, monitoring, and analyzing frontend experiments to improve engagement and completion rates. Contributed to a greenfield monorepo initiative to modularize form development using TDD, and mentored teammates on state management patterns with hooks and context.',
     tools: [
       'Nx.js',
       'Typescript',
@@ -51,8 +57,10 @@ export const workExperienceData = [
   {
     image: nomad,
     href: 'https://nomadhealth.com/',
+    company: 'Nomad Health',
     date: '2019 - 2021',
     title: 'Technical Lead',
+    description: 'Led the migration from server-rendered templates to a modern Next.js client-driven application, improving nurse profile completion by 15% and application-to-submission conversion by 16%. Directed sprint planning, scrum ceremonies, and cross-team dependency management across phased migration milestones. Built operational tooling to qualify and funnel candidates through job submission workflows, and contributed to rules-engine services processing MongoDB data into Elasticsearch for cross-team querying.',
     tools: [
       'Next.js',
       'React',
@@ -67,8 +75,10 @@ export const workExperienceData = [
   {
     image: dnt,
     href: 'https://domandtom.com/',
+    company: 'Dom & Tom',
     date: '2018 - 2019',
     title: 'Technical Lead',
+    description: 'Delivered web products across multiple client engagements, coordinating with offshore teams to accelerate execution timelines. Built a React Admin scaffold integrating REST APIs with a GraphQL server, and wrote mobile automation tests for a React Native application using Appium. Served as technical lead, translating product requirements into maintainable, well-tested frontend implementations across diverse client stacks.',
     tools: [
       'React',
       'GraphQL',
@@ -82,8 +92,10 @@ export const workExperienceData = [
   {
     image: smImage,
     href: 'https://www.surveymonkey.com/',
+    company: 'SurveyMonkey',
     date: '2015 - 2018',
     title: 'Software Engineer',
+    description: 'Developed and maintained a high-traffic service handling approximately 82,000 requests per minute, ensuring reliability through Kafka-based event processing and S3 asset lifecycle management. Helped define APIs for new survey question types — star rating, slider, and file upload — and supported multi-language survey capabilities across the platform. Migrated legacy endpoints to a RESTful architecture, contributing to the scalable infrastructure underpinning one of the web\'s most widely used survey products.',
     tools: [
       'Backbone.js',
       'JQuery',
@@ -99,8 +111,10 @@ export const workExperienceData = [
   {
     image: tunein,
     href: 'https://tunein.com/',
+    company: 'TuneIn',
     date: '2014 - 2014',
     title: 'Software Engineer',
+    description: 'Contributed to frontend development on TuneIn\'s web platform, one of the web\'s largest audio streaming services. Built and maintained consumer-facing features using .NET, JavaScript, and jQuery, collaborating with the engineering team to ship reliable, user-facing functionality at scale.',
     tools: [
       '.Net',
       'Javascript',

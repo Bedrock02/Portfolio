@@ -1,17 +1,14 @@
 import React from 'react';
 import Layout from '../components/Layout/index';
 import Roles from '../components/Roles';
+import Skills from '../components/Skills';
 import WorkExperience from '../components/WorkExperience';
-import Profile from '../components/Profile';
-import Hobbies from '../components/Hobbies/index';
-
 function IndexPage() {
   return (
     <Layout>
-      <Profile />
       <Roles />
+      <Skills />
       <WorkExperience />
-      <Hobbies />
     </Layout>
   );
 }

@@ -1,10 +1,52 @@
-.main {
-  background: #2185D0;
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 56px;
 }
-.link {
-  color: white;
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 8px 0;
+  text-decoration: none !important;
+  color: #7890a8;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: color 0.2s ease;
 }
-.icon {
-  width: 2.18em;
-  padding-right: 10px;
+
+.navItem:hover {
+  color: #B9D6F2;
+}
+
+.navItem:hover .navLine {
+  width: 64px;
+  background: #B9D6F2;
+}
+
+.active {
+  color: #B9D6F2;
+}
+
+.active .navLine {
+  width: 64px;
+  background: rebeccapurple;
+}
+
+.navLine {
+  display: inline-block;
+  width: 32px;
+  height: 1px;
+  background: #7890a8;
+  transition: width 0.2s ease, background 0.2s ease;
+  flex-shrink: 0;
+}
+
+.navText {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
 }

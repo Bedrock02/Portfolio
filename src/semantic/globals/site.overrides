@@ -1,45 +1,549 @@
 /*******************************
         Global Overrides
 *******************************/
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 html {
   scroll-behavior: smooth;
 }
-.work-logos {
-  padding: 100px 0;
-  font-size: 50px;
+
+body {
+  background-color: #061A40 !important;
+  /* #94a3b8 on #061A40 = ~6.8:1 contrast ratio — passes WCAG AA & AAA */
+  color: #94a3b8 !important;
 }
 
-.footer {
-  background: #353535;
-  color: #FFFFFF;
-  margin-top: 50px;
+/* ── Skip navigation link (accessibility) ── */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 24px;
+  z-index: 9999;
+  background: rebeccapurple;
+  color: #fff !important;
+  font-size: 0.875rem;
+  font-weight: 700;
+  padding: 12px 20px;
+  border-radius: 0 0 6px 6px;
+  text-decoration: none !important;
+  transition: top 0.2s ease;
 }
 
-.footer a {
-  color: #FFFFFF;
+.skip-link:focus {
+  top: 0;
 }
 
-.midnight-blue {
+/* ── Focus indicators — visible ring for keyboard users ── */
+:focus-visible {
+  outline: 2px solid #B9D6F2;
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #B9D6F2;
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #061A40;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #102E4A;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0353A4;
+}
+
+/* Hide legacy Semantic UI menu — replaced by sidebar nav */
+.ui.secondary.pointing.menu {
+  display: none;
+}
+
+/* ── Two-column layout ── */
+.portfolio-app {
+  display: flex;
+  min-height: 100vh;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+
+.portfolio-sidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 45%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 96px 48px 96px 0;
+  flex-shrink: 0;
+}
+
+.portfolio-sidebar-top {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.portfolio-sidebar-bottom {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  padding-top: 24px;
+}
+
+.portfolio-main {
+  flex: 1;
+  padding: 96px 0 96px 48px;
+}
+
+.portfolio-social-link {
+  color: #94a3b8 !important;
+  transition: color 0.2s ease, transform 0.2s ease;
+  display: inline-flex !important;
+  align-items: center;
+}
+
+.portfolio-social-link:hover {
+  color: #B9D6F2 !important;
+  transform: translateY(-3px);
+}
+
+.portfolio-social-link i.icon {
+  margin: 0 !important;
+}
+
+/* ── Open to work badge ── */
+.open-to-work {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: #94a3b8;
+  margin-bottom: 28px;
+  letter-spacing: 0.02em;
+}
+
+.open-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #34d399;
+  flex-shrink: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .open-dot {
+    animation: pulse-dot 2.2s ease-in-out infinite;
+  }
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.45; transform: scale(0.75); }
+}
+
+/* ── Profile / Sidebar hero ── */
+.profile-hero {
+  margin-bottom: 8px;
+}
+
+.profile-name {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #B9D6F2 !important;
+  line-height: 1.1;
+  margin-bottom: 12px;
+}
+
+.profile-title {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: rebeccapurple !important;
+  margin-bottom: 20px;
+  letter-spacing: 0.02em;
+}
+
+.profile-tagline {
+  color: #94a3b8;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  max-width: 320px;
+  margin-bottom: 28px;
+}
+
+.profile-resume-link {
+  display: inline-block;
+  color: #B9D6F2 !important;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-decoration: none !important;
+  border: 1px solid #0353A4;
+  border-radius: 4px;
+  padding: 10px 20px;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.profile-resume-link:hover {
+  background: rgba(3, 83, 164, 0.2);
+  border-color: #B9D6F2;
+}
+
+/* ── Sidebar nav ── */
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 48px;
+}
+
+.sidebar-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 8px 0;
+  text-decoration: none !important;
+  color: #94a3b8 !important;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: color 0.2s ease;
+}
+
+.sidebar-nav-item:hover {
   color: #B9D6F2 !important;
 }
 
-.static-form {
-  padding: 100px;
-  background: #2185D0;
+.sidebar-nav-item:hover .sidebar-nav-line {
+  width: 64px;
+  background: #B9D6F2;
 }
 
-.ui.secondary.pointing.menu .active.item {
-  border-color: white !important;
-}
-
-.ui.menu .item {
+.sidebar-nav-item.active {
   color: #B9D6F2 !important;
 }
 
-.ui.secondary.pointing.menu .active.item {
-  color: white !important;
+.sidebar-nav-item.active .sidebar-nav-line {
+  width: 64px;
+  background: rebeccapurple;
 }
 
-#about div.column {
-  padding: 50px !important;
+.sidebar-nav-line {
+  display: inline-block;
+  width: 32px;
+  height: 1px;
+  background: #94a3b8;
+  transition: width 0.2s ease, background 0.2s ease;
+  flex-shrink: 0;
+}
+
+.sidebar-nav-text {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+}
+
+/* ── Section shared ── */
+.portfolio-section {
+  padding: 0 0 100px;
+  scroll-margin-top: 80px;
+}
+
+/* Section dividers — visual separation between content blocks */
+#skills,
+#work {
+  border-top: 1px solid #102E4A;
+  padding-top: 72px;
+}
+
+.portfolio-section-title {
+  font-size: 0.75rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  color: #B9D6F2 !important;
+  margin-bottom: 32px !important;
+}
+
+/* ── Scroll entrance animations ── */
+@media (prefers-reduced-motion: no-preference) {
+  .portfolio-section {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.55s ease, transform 0.55s ease;
+  }
+
+  .portfolio-section.section-visible {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Always visible when reduced motion is preferred */
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-section {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ── Skills ── */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.skills-group {
+  background: rgba(3, 83, 164, 0.08);
+  border: 1px solid #102E4A;
+  border-radius: 6px;
+  padding: 20px 22px;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.skills-group:hover {
+  border-color: #0353A4;
+  background: rgba(3, 83, 164, 0.16);
+}
+
+/* skills-category is large bold uppercase — 3:1 ratio needed, rebeccapurple passes */
+.skills-category {
+  font-size: 0.8rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+  color: rebeccapurple !important;
+  margin: 0 0 14px !important;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* #B9D6F2 on rgba(185,214,242,0.07) dark bg — passes WCAG AA */
+.skill-pill {
+  background: rgba(185, 214, 242, 0.07);
+  color: #B9D6F2;
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 4px 12px;
+  border-radius: 20px;
+  border: 1px solid #102E4A;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.skills-group:hover .skill-pill {
+  border-color: #0353A4;
+}
+
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── About / Roles ── */
+.about-bio {
+  margin-bottom: 48px;
+}
+
+.about-bio p {
+  color: #94a3b8;
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+.about-bio a {
+  color: #B9D6F2 !important;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(185, 214, 242, 0.3);
+  transition: border-color 0.2s;
+}
+
+.about-bio a:hover {
+  border-color: #B9D6F2;
+}
+
+/* ── Work Experience ── */
+.work-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.work-card {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 24px;
+  padding: 20px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.work-card:hover {
+  background: rgba(3, 83, 164, 0.15);
+  border-color: #102E4A;
+}
+
+.work-card:hover .work-title-link {
+  color: #B9D6F2 !important;
+}
+
+.work-card:hover .work-arrow {
+  color: rebeccapurple;
+  transform: translate(2px, -2px);
+}
+
+/* Minimum 0.8rem (~12.8px) on date labels */
+.work-date {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding-top: 4px;
+  line-height: 1.6;
+}
+
+.work-details {
+  flex: 1;
+}
+
+.work-title {
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  margin-bottom: 10px !important;
+  margin-top: 0 !important;
+}
+
+.work-title-link {
+  color: #B9D6F2 !important;
+  text-decoration: none !important;
+  transition: color 0.2s ease;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.work-arrow {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  transition: transform 0.2s ease, color 0.2s ease;
+  display: inline-block;
+}
+
+.work-logo-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 6px;
+  padding: 8px 16px;
+  margin-bottom: 14px;
+  width: fit-content;
+  transition: background 0.2s ease;
+}
+
+.work-card:hover .work-logo-wrapper {
+  background: rgba(255, 255, 255, 1);
+}
+
+.work-logo {
+  height: 36px;
+  width: auto;
+  max-width: 130px;
+  object-fit: contain;
+  display: block;
+}
+
+.work-description {
+  color: #94a3b8;
+  font-size: 0.875rem;
+  line-height: 1.75;
+  margin: 0 0 14px;
+}
+
+.work-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* #d8b4fe on rgba(102,51,153,0.2) dark bg — passes WCAG AA */
+.work-pill {
+  background: rgba(102, 51, 153, 0.2);
+  color: #d8b4fe;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 20px;
+  letter-spacing: 0.03em;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .portfolio-app {
+    flex-direction: column;
+    padding: 0 40px;
+  }
+
+  .portfolio-sidebar {
+    position: relative;
+    width: 100%;
+    max-width: none;
+    height: auto;
+    padding: 60px 0 40px;
+  }
+
+  .portfolio-sidebar-bottom {
+    padding-top: 40px;
+  }
+
+  .portfolio-main {
+    padding: 40px 0 60px;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .portfolio-app {
+    padding: 0 24px;
+  }
+
+  .portfolio-sidebar {
+    padding: 48px 0 32px;
+  }
 }

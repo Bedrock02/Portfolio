@@ -1,7 +1,50 @@
-.blurb {
-  padding: 0px 50px 0px 50px;
+.section {
+  padding: 0 0 100px;
 }
 
-.videos {
-  padding: 300px 0px 300px 0px;
+.sectionTitle {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #B9D6F2;
+  margin-bottom: 40px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px 60px;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+.videoWrapper {
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid #102E4A;
+}
+
+.blurb {
+  padding: 16px 0;
+}
+
+.hobbyTitle {
+  color: #B9D6F2 !important;
+  font-size: 1.4rem !important;
+  margin-bottom: 12px !important;
+  margin-top: 0 !important;
+}
+
+.hobbyText {
+  color: #7890a8;
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin: 0;
 }

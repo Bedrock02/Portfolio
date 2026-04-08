@@ -1,14 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Grid } from 'semantic-ui-react';
 import VideoLooper from 'react-video-looper';
-import { blurb } from './hobbies.module.css';
 import { hobbyData } from './data';
 
 function HobbyDescription({ header, description }) {
   return (
-    <div className={blurb}>
-      <h1>{header}</h1>
+    <div className="hobby-blurb">
+      <h3>{header}</h3>
       <p>{description}</p>
     </div>
   );
@@ -16,34 +14,27 @@ function HobbyDescription({ header, description }) {
 
 HobbyDescription.propTypes = {
   header: PropTypes.string.isRequired,
-  description: PropTypes.isRequired,
+  description: PropTypes.node.isRequired,
 };
 
 function Hobbies() {
   return (
-    <>
-      <Grid.Row id="life" centered verticalAlign="middle">
-        <Grid.Column textAlign="center" width={16} style={{ padding: '100px 0' }}>
-          <h1>Life Outside Of Work</h1>
-        </Grid.Column>
-      </Grid.Row>
-
-      <Grid.Row columns={2}>
+    <section id="life" className="portfolio-section">
+      <h2 className="portfolio-section-title">Life Outside Of Work</h2>
+      <div className="hobbies-grid">
         {hobbyData.map(({ video, header, description }) => {
           const { source, start, end } = video;
           return (
-            <>
-              <Grid.Column>
-                <VideoLooper source={source} start={start} end={end} autoplay height="50vh" />
-              </Grid.Column>
-              <Grid.Column verticalAlign="middle" textAlign="center">
-                <HobbyDescription header={header} description={description} />
-              </Grid.Column>
-            </>
+            <React.Fragment key={header}>
+              <div className="hobby-video-wrapper">
+                <VideoLooper source={source} start={start} end={end} autoplay height="300px" />
+              </div>
+              <HobbyDescription header={header} description={description} />
+            </React.Fragment>
           );
         })}
-      </Grid.Row>
-    </>
+      </div>
+    </section>
   );
 }
 

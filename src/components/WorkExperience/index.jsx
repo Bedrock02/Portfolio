@@ -1,42 +1,32 @@
 import React from 'react';
-import { Image, Grid, List } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
-import {
-  work, experience, grow, toolContainer,
-} from './work.module.css';
 import { workExperienceData } from './data';
 
 function WorkItem({ item }) {
   const {
-    image, href, date, title, tools,
+    image, href, company, date, title, description, tools,
   } = item;
   return (
-    <Grid.Row className={work} centered verticalAlign="middle">
-      <Grid.Column className="work-logos" textAlign="center" width={8}>
-        <div className={grow}>
-          <a href={href} target="_blank" rel="noreferrer">
-            <Image centered src={image} size="medium" />
+    <div className="work-card">
+      <div className="work-date">{date}</div>
+      <div className="work-details">
+        <div className="work-logo-wrapper">
+          <img src={image} alt={`${company} logo`} className="work-logo" />
+        </div>
+        <h3 className="work-title">
+          <a href={href} target="_blank" rel="noreferrer" className="work-title-link" aria-label={`${title} at ${company} (opens in new tab)`}>
+            {title}
+            <span className="work-arrow" aria-hidden="true"> ↗</span>
           </a>
-        </div>
-      </Grid.Column>
-      <Grid.Column textAlign="center" width={8}>
-        <div>
-          <h2>{date}</h2>
-          <h2>{title}</h2>
-        </div>
-        <div className={toolContainer}>
-          <List divided relaxed horizontal>
-            {tools.map((tool) => (
-              <List.Item>
-                <List.Content>
-                  {tool}
-                </List.Content>
-              </List.Item>
-            ))}
-          </List>
-        </div>
-      </Grid.Column>
-    </Grid.Row>
+        </h3>
+        <p className="work-description">{description}</p>
+        <ul className="work-tools" aria-label="Technologies used">
+          {tools.map((tool) => (
+            <li key={tool} className="work-pill">{tool}</li>
+          ))}
+        </ul>
+      </div>
+    </div>
   );
 }
 
@@ -44,24 +34,25 @@ WorkItem.propTypes = {
   item: PropTypes.shape({
     image: PropTypes.string.isRequired,
     href: PropTypes.string.isRequired,
+    company: PropTypes.string.isRequired,
     date: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
     tools: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
   }).isRequired,
 };
 
 function WorkExperience() {
   return (
-    <Grid padded stackable>
-      <Grid.Row id="work" className={experience} centered verticalAlign="middle" style={{ padding: '100px 0' }}>
-        <Grid.Column textAlign="center" width={16}>
-          <h1>Work Experience</h1>
-        </Grid.Column>
-      </Grid.Row>
-      {workExperienceData.map((item) => (
-        <WorkItem item={item} />
-      ))}
-    </Grid>
+    <section id="work" className="portfolio-section">
+      <h2 className="portfolio-section-title">Experience</h2>
+      <div className="work-list">
+        {workExperienceData.map((item) => (
+          <WorkItem key={item.href} item={item} />
+        ))}
+      </div>
+    </section>
   );
 }
+
 export default WorkExperience;

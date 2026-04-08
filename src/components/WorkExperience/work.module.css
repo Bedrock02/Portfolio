@@ -1,20 +1,134 @@
-
-.work {
-  border-bottom: 1px solid #102E4A;
-};
-
-.experience {
-  font-size: 50px;
+.section {
+  padding: 0 0 100px;
 }
 
-.grow {
-  transition: all .2s ease-in-out; 
+.sectionTitle {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #B9D6F2 !important;
+  margin-bottom: 32px;
 }
 
-.grow:hover {
-  transform: scale(1.1);
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
-.toolContainer {
-  margin-top: 50px;
+.card {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 24px;
+  padding: 20px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  transition: background 0.2s ease, border-color 0.2s ease;
+  cursor: default;
+}
+
+.card:hover {
+  background: rgba(3, 83, 164, 0.15);
+  border-color: #102E4A;
+}
+
+.card:hover .titleLink {
+  color: #B9D6F2 !important;
+}
+
+.card:hover .arrow {
+  color: rebeccapurple;
+  transform: translate(2px, -2px);
+}
+
+.card:hover .logo {
+  opacity: 1;
+  filter: none;
+}
+
+.date {
+  font-size: 0.72rem;
+  color: #7890a8;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding-top: 4px;
+  line-height: 1.6;
+}
+
+.details {
+  flex: 1;
+}
+
+.title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  margin-top: 0;
+}
+
+.titleLink {
+  color: #B9D6F2 !important;
+  text-decoration: none !important;
+  transition: color 0.2s ease;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.arrow {
+  font-size: 0.85rem;
+  color: #7890a8;
+  transition: transform 0.2s ease, color 0.2s ease;
+  display: inline-block;
+}
+
+.logoWrapper {
+  margin-bottom: 12px;
+}
+
+.logo {
+  height: 24px;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.5;
+  filter: grayscale(20%);
+  transition: opacity 0.2s ease, filter 0.2s ease;
+}
+
+.tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pill {
+  background: rgba(102, 51, 153, 0.2);
+  color: #c49cf7;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 20px;
+  letter-spacing: 0.03em;
+}
+
+.fullResume {
+  display: inline-block;
+  margin-top: 40px;
+  color: #B9D6F2;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.fullResume:hover {
+  color: #B9D6F2;
+  border-color: rebeccapurple;
 }

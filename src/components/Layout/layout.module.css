@@ -1,0 +1,91 @@
+/* Two-column portfolio layout */
+
+.app {
+  display: flex;
+  min-height: 100vh;
+  background-color: #061A40;
+  color: #7890a8;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+
+.sidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 45%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 96px 48px 96px 0;
+  flex-shrink: 0;
+}
+
+.sidebarTop {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebarBottom {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  padding-top: 24px;
+}
+
+.main {
+  flex: 1;
+  padding: 96px 0 96px 48px;
+}
+
+.socialLink {
+  color: #7890a8 !important;
+  transition: color 0.2s ease, transform 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+}
+
+.socialLink:hover {
+  color: #B9D6F2 !important;
+  transform: translateY(-3px);
+}
+
+.socialLink i.icon {
+  margin: 0 !important;
+}
+
+@media (max-width: 1024px) {
+  .app {
+    flex-direction: column;
+    padding: 0 40px;
+  }
+
+  .sidebar {
+    position: relative;
+    width: 100%;
+    max-width: none;
+    height: auto;
+    padding: 60px 0 40px;
+  }
+
+  .sidebarBottom {
+    padding-top: 40px;
+  }
+
+  .main {
+    padding: 40px 0 60px;
+  }
+}
+
+@media (max-width: 640px) {
+  .app {
+    padding: 0 24px;
+  }
+
+  .sidebar {
+    padding: 48px 0 32px;
+  }
+}

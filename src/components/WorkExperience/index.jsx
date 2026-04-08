@@ -1,9 +1,5 @@
 import React from 'react';
-import { Image, Grid, List } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
-import {
-  work, experience, grow, toolContainer,
-} from './work.module.css';
 import { workExperienceData } from './data';
 
 function WorkItem({ item }) {
@@ -11,32 +7,25 @@ function WorkItem({ item }) {
     image, href, date, title, tools,
   } = item;
   return (
-    <Grid.Row className={work} centered verticalAlign="middle">
-      <Grid.Column className="work-logos" textAlign="center" width={8}>
-        <div className={grow}>
-          <a href={href} target="_blank" rel="noreferrer">
-            <Image centered src={image} size="medium" />
+    <div className="work-card">
+      <div className="work-date">{date}</div>
+      <div className="work-details">
+        <h3 className="work-title">
+          <a href={href} target="_blank" rel="noreferrer" className="work-title-link">
+            {title}
+            <span className="work-arrow"> ↗</span>
           </a>
+        </h3>
+        <div className="work-logo-wrapper">
+          <img src={image} alt={title} className="work-logo" />
         </div>
-      </Grid.Column>
-      <Grid.Column textAlign="center" width={8}>
-        <div>
-          <h2>{date}</h2>
-          <h2>{title}</h2>
-        </div>
-        <div className={toolContainer}>
-          <List divided relaxed horizontal>
-            {tools.map((tool) => (
-              <List.Item>
-                <List.Content>
-                  {tool}
-                </List.Content>
-              </List.Item>
-            ))}
-          </List>
-        </div>
-      </Grid.Column>
-    </Grid.Row>
+        <ul className="work-tools">
+          {tools.map((tool) => (
+            <li key={tool} className="work-pill">{tool}</li>
+          ))}
+        </ul>
+      </div>
+    </div>
   );
 }
 
@@ -52,16 +41,23 @@ WorkItem.propTypes = {
 
 function WorkExperience() {
   return (
-    <Grid padded stackable>
-      <Grid.Row id="work" className={experience} centered verticalAlign="middle" style={{ padding: '100px 0' }}>
-        <Grid.Column textAlign="center" width={16}>
-          <h1>Work Experience</h1>
-        </Grid.Column>
-      </Grid.Row>
-      {workExperienceData.map((item) => (
-        <WorkItem item={item} />
-      ))}
-    </Grid>
+    <section id="work" className="portfolio-section">
+      <h2 className="portfolio-section-title">Experience</h2>
+      <div className="work-list">
+        {workExperienceData.map((item) => (
+          <WorkItem key={item.href} item={item} />
+        ))}
+      </div>
+      <a
+        href="https://bedrock02.github.io/resume/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="work-full-resume"
+      >
+        View Full Résumé ↗
+      </a>
+    </section>
   );
 }
+
 export default WorkExperience;

@@ -1,63 +1,75 @@
 import React from 'react';
-import { Grid, Icon, List } from 'semantic-ui-react';
-import {
-  group, dev, speaking, leader, link,
-} from './roles.module.css';
-
+import { Icon, List } from 'semantic-ui-react';
 import { toolNames, leaderExamples } from './data';
 
 function Roles() {
   return (
-    <Grid.Row id="about" columns={3} className={group}>
-      <Grid.Column textAlign="center" className={dev}>
-        <Icon name="computer" size="huge" />
-        <h2>Software Engineer</h2>
-        <p>
-          My passion is creating web applications with the latest and greatest tools.
-          My design approach is simple, clean and crisp.
-        </p>
-        <h3>Tool Kit</h3>
-        <List horizontal>
-          {toolNames.map((name) => (
-            <List.Item><Icon name={name} size="big" /></List.Item>
-          ))}
-        </List>
-      </Grid.Column>
+    <section id="about" className="portfolio-section">
+      <h2 className="portfolio-section-title">About</h2>
 
-      <Grid.Column textAlign="center" className={speaking}>
-        <Icon name="microphone" size="huge" style={{ color: 'white' }} />
-        <h2>Public Speaker</h2>
+      <div className="about-bio">
         <p>
-          Our stories should be shared with the future generation.
-          My story is unique and relatable to many.
+          {`I'm a software engineer passionate about building web applications with clean, modern tools.
+          With over a decade of experience across startups and enterprises, I focus on performant,
+          accessible interfaces and the teams that build them.`}
         </p>
-        <h3>Audiences</h3>
-        <List>
-          <List.Item>Non Profit Organizations</List.Item>
-          <List.Item>High School/College</List.Item>
-          <List.Item>Tech Communities</List.Item>
-        </List>
-      </Grid.Column>
+        <p>
+          {`Beyond engineering, I give back through public speaking and community leadership —
+          mentoring aspiring developers and volunteering with organizations like `}
+          <a href="https://www.pursuit.org/volunteer" target="_blank" rel="noopener noreferrer">
+            Pursuit
+          </a>
+          {`.`}
+        </p>
+      </div>
 
-      <Grid.Column textAlign="center" className={leader}>
-        <Icon name="handshake outline" size="huge" color="blue" />
-        <h2>Community Leader</h2>
-        <p>
-          In order to see the change we want to see,
-          we as individuals need to invest in our communities.
-        </p>
-        <h3>Contributions</h3>
-        <List>
-          {leaderExamples.map(({ title, href }) => (
-            <List.Item>
-              <a className={link} target="_blank" rel="noopener noreferrer" href={href}>
-                {title}
-              </a>
-            </List.Item>
-          ))}
-        </List>
-      </Grid.Column>
-    </Grid.Row>
+      <div className="role-grid">
+        <div className="role-card">
+          <Icon name="computer" size="large" />
+          <h3>Software Engineer</h3>
+          <p>
+            My passion is creating web applications with the latest tools.
+            Clean, crisp, and always performant.
+          </p>
+          <div className="role-tools">
+            {toolNames.map((name) => (
+              <Icon key={name} name={name} size="large" className="role-tool-icon" />
+            ))}
+          </div>
+        </div>
+
+        <div className="role-card">
+          <Icon name="microphone" size="large" />
+          <h3>Public Speaker</h3>
+          <p>
+            Our stories should be shared with future generations.
+            Mine is unique and relatable to many.
+          </p>
+          <List>
+            <List.Item>Non-profit organizations</List.Item>
+            <List.Item>High school &amp; college</List.Item>
+            <List.Item>Tech communities</List.Item>
+          </List>
+        </div>
+
+        <div className="role-card">
+          <Icon name="handshake outline" size="large" />
+          <h3>Community Leader</h3>
+          <p>
+            To see the change we want, we need to invest in our communities.
+          </p>
+          <List>
+            {leaderExamples.map(({ title, href }) => (
+              <List.Item key={href}>
+                <a target="_blank" rel="noopener noreferrer" href={href}>
+                  {title}
+                </a>
+              </List.Item>
+            ))}
+          </List>
+        </div>
+      </div>
+    </section>
   );
 }
 

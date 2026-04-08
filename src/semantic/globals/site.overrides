@@ -1,45 +1,499 @@
 /*******************************
         Global Overrides
 *******************************/
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 html {
   scroll-behavior: smooth;
 }
-.work-logos {
-  padding: 100px 0;
-  font-size: 50px;
+
+body {
+  background-color: #061A40 !important;
+  color: #7890a8 !important;
 }
 
-.footer {
-  background: #353535;
-  color: #FFFFFF;
-  margin-top: 50px;
+::-webkit-scrollbar {
+  width: 6px;
 }
 
-.footer a {
-  color: #FFFFFF;
+::-webkit-scrollbar-track {
+  background: #061A40;
 }
 
-.midnight-blue {
+::-webkit-scrollbar-thumb {
+  background: #102E4A;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0353A4;
+}
+
+/* Hide legacy Semantic UI menu — replaced by sidebar nav */
+.ui.secondary.pointing.menu {
+  display: none;
+}
+
+/* ── Two-column layout ── */
+.portfolio-app {
+  display: flex;
+  min-height: 100vh;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+
+.portfolio-sidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 45%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 96px 48px 96px 0;
+  flex-shrink: 0;
+}
+
+.portfolio-sidebar-top {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.portfolio-sidebar-bottom {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  padding-top: 24px;
+}
+
+.portfolio-main {
+  flex: 1;
+  padding: 96px 0 96px 48px;
+}
+
+.portfolio-social-link {
+  color: #7890a8 !important;
+  transition: color 0.2s ease, transform 0.2s ease;
+  display: inline-flex !important;
+  align-items: center;
+}
+
+.portfolio-social-link:hover {
+  color: #B9D6F2 !important;
+  transform: translateY(-3px);
+}
+
+.portfolio-social-link i.icon {
+  margin: 0 !important;
+}
+
+/* ── Profile / Sidebar hero ── */
+.profile-hero {
+  margin-bottom: 48px;
+}
+
+.profile-name {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #B9D6F2 !important;
+  line-height: 1.1;
+  margin-bottom: 12px;
+}
+
+.profile-title {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: rebeccapurple !important;
+  margin-bottom: 16px;
+  letter-spacing: 0.02em;
+}
+
+.profile-tagline {
+  color: #7890a8;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  max-width: 320px;
+  margin-bottom: 28px;
+}
+
+.profile-resume-link {
+  display: inline-block;
+  color: #B9D6F2 !important;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-decoration: none !important;
+  border: 1px solid #0353A4;
+  border-radius: 4px;
+  padding: 10px 20px;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.profile-resume-link:hover {
+  background: rgba(3, 83, 164, 0.2);
+  border-color: #B9D6F2;
+}
+
+/* ── Sidebar nav ── */
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 56px;
+}
+
+.sidebar-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 8px 0;
+  text-decoration: none !important;
+  color: #7890a8 !important;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: color 0.2s ease;
+}
+
+.sidebar-nav-item:hover {
   color: #B9D6F2 !important;
 }
 
-.static-form {
-  padding: 100px;
-  background: #2185D0;
+.sidebar-nav-item:hover .sidebar-nav-line {
+  width: 64px;
+  background: #B9D6F2;
 }
 
-.ui.secondary.pointing.menu .active.item {
-  border-color: white !important;
-}
-
-.ui.menu .item {
+.sidebar-nav-item.active {
   color: #B9D6F2 !important;
 }
 
-.ui.secondary.pointing.menu .active.item {
-  color: white !important;
+.sidebar-nav-item.active .sidebar-nav-line {
+  width: 64px;
+  background: rebeccapurple;
 }
 
-#about div.column {
-  padding: 50px !important;
+.sidebar-nav-line {
+  display: inline-block;
+  width: 32px;
+  height: 1px;
+  background: #7890a8;
+  transition: width 0.2s ease, background 0.2s ease;
+  flex-shrink: 0;
+}
+
+.sidebar-nav-text {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+}
+
+/* ── Section shared ── */
+.portfolio-section {
+  padding: 0 0 100px;
+}
+
+.portfolio-section-title {
+  font-size: 0.75rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  color: #B9D6F2 !important;
+  margin-bottom: 32px !important;
+}
+
+/* ── About / Roles ── */
+.about-bio {
+  margin-bottom: 48px;
+}
+
+.about-bio p {
+  color: #7890a8;
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+.about-bio a {
+  color: rebeccapurple !important;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.about-bio a:hover {
+  border-color: rebeccapurple;
+}
+
+.role-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.role-card {
+  background: rgba(3, 83, 164, 0.08);
+  border: 1px solid #102E4A;
+  border-radius: 6px;
+  padding: 28px 22px;
+  transition: border-color 0.2s ease, transform 0.2s ease, background 0.2s ease;
+}
+
+.role-card:hover {
+  border-color: #0353A4;
+  background: rgba(3, 83, 164, 0.18);
+  transform: translateY(-4px);
+}
+
+.role-card i.icon {
+  color: rebeccapurple !important;
+  margin-bottom: 12px !important;
+}
+
+.role-card h3 {
+  color: #B9D6F2 !important;
+  font-size: 0.95rem !important;
+  margin-bottom: 8px !important;
+  margin-top: 0 !important;
+}
+
+.role-card p {
+  color: #7890a8;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.role-card .ui.list .item {
+  color: #7890a8 !important;
+  font-size: 0.85rem !important;
+}
+
+.role-card a {
+  color: rebeccapurple !important;
+  text-decoration: none;
+}
+
+.role-card a:hover {
+  text-decoration: underline;
+}
+
+.role-tool-icon {
+  color: #7890a8 !important;
+  transition: color 0.2s !important;
+}
+
+.role-tool-icon:hover {
+  color: rebeccapurple !important;
+}
+
+.role-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+  list-style: none;
+  padding: 0;
+}
+
+/* ── Work Experience ── */
+.work-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.work-card {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 24px;
+  padding: 20px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.work-card:hover {
+  background: rgba(3, 83, 164, 0.15);
+  border-color: #102E4A;
+}
+
+.work-card:hover .work-title-link {
+  color: #B9D6F2 !important;
+}
+
+.work-card:hover .work-arrow {
+  color: rebeccapurple;
+  transform: translate(2px, -2px);
+}
+
+.work-card:hover .work-logo {
+  opacity: 1;
+  filter: none;
+}
+
+.work-date {
+  font-size: 0.72rem;
+  color: #7890a8;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding-top: 4px;
+  line-height: 1.6;
+}
+
+.work-details {
+  flex: 1;
+}
+
+.work-title {
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  margin-bottom: 10px !important;
+  margin-top: 0 !important;
+}
+
+.work-title-link {
+  color: #B9D6F2 !important;
+  text-decoration: none !important;
+  transition: color 0.2s ease;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.work-arrow {
+  font-size: 0.85rem;
+  color: #7890a8;
+  transition: transform 0.2s ease, color 0.2s ease;
+  display: inline-block;
+}
+
+.work-logo-wrapper {
+  margin-bottom: 12px;
+}
+
+.work-logo {
+  height: 24px;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.5;
+  filter: grayscale(20%);
+  transition: opacity 0.2s ease, filter 0.2s ease;
+}
+
+.work-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.work-pill {
+  background: rgba(102, 51, 153, 0.2);
+  color: #c49cf7;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 20px;
+  letter-spacing: 0.03em;
+}
+
+.work-full-resume {
+  display: inline-block;
+  margin-top: 40px;
+  color: #B9D6F2 !important;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-decoration: none !important;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.work-full-resume:hover {
+  border-color: rebeccapurple;
+}
+
+/* ── Hobbies ── */
+.hobbies-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px 60px;
+  align-items: center;
+}
+
+.hobby-video-wrapper {
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid #102E4A;
+}
+
+.hobby-blurb {
+  padding: 16px 0;
+}
+
+.hobby-blurb h3 {
+  color: #B9D6F2 !important;
+  font-size: 1.4rem !important;
+  margin-bottom: 12px !important;
+  margin-top: 0 !important;
+}
+
+.hobby-blurb p {
+  color: #7890a8;
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .portfolio-app {
+    flex-direction: column;
+    padding: 0 40px;
+  }
+
+  .portfolio-sidebar {
+    position: relative;
+    width: 100%;
+    max-width: none;
+    height: auto;
+    padding: 60px 0 40px;
+  }
+
+  .portfolio-sidebar-bottom {
+    padding-top: 40px;
+  }
+
+  .portfolio-main {
+    padding: 40px 0 60px;
+  }
+
+  .role-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hobbies-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 640px) {
+  .portfolio-app {
+    padding: 0 24px;
+  }
+
+  .portfolio-sidebar {
+    padding: 48px 0 32px;
+  }
 }

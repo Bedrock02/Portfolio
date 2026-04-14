@@ -1,6 +1,6 @@
 import React from 'react';
 
-const skillGroups = [
+export const skillGroups = [
   {
     category: 'Frontend',
     // TypeScript + React daily at Peloton/lululemon; JS foundational; HTML/CSS throughout; RN at D&T

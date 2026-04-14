@@ -1,0 +1,10 @@
+fastapi
+uvicorn[standard]
+openai>=1.0.0
+pinecone>=3.0.0
+python-dotenv
+pydantic
+pdfplumber
+sentry-sdk[fastapi]
+openai
+ipdb

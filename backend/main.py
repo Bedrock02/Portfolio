@@ -4,7 +4,8 @@ import sentry_sdk
 from sentry_sdk.integrations.starlette import StarletteIntegration
 from sentry_sdk.integrations.fastapi import FastApiIntegration
 from rag.retriever import retrieve
-from rag.chain import answer
+from fastapi.responses import StreamingResponse
+from rag.chain import answer, stream_answer
 from pydantic import BaseModel
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
@@ -45,3 +46,12 @@ def chat(request: ChatRequest):
     sentry_sdk.set_context("rag_query", {"query": request.query, "chunks_returned": len(context)})
     ai_answer = answer(request.query, context)
     return {"answer": ai_answer}
+
+@app.post("/chat/stream")
+def chat_stream(request: ChatRequest):
+    context = retrieve(request.query)
+    sentry_sdk.set_context("rag_query", {"query": request.query, "chunks_returned": len(context)})
+    return StreamingResponse(
+        stream_answer(request.query, context),
+        media_type="text/plain",
+    )

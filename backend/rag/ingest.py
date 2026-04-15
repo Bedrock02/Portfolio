@@ -29,22 +29,34 @@ def ingest():
     client_openai = openai.OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
     print("Clients initialized")
 
-    with open(os.path.join(data_dir, "resume.md"), "r") as f:
-        contents = f.read()
-    content_chunks = [f"## {chunk}" for chunk in contents.split("## ") if chunk.strip()]
-    print(f"Split into {len(content_chunks)} chunks")
-    print("Generating embeddings...")
-    response = client_openai.embeddings.create(input=content_chunks, model="text-embedding-3-small")
+    md_files = [f for f in os.listdir(data_dir) if f.endswith(".md")]
+    print(f"Found {len(md_files)} markdown files: {md_files}")
+
+    all_chunks = []
+    all_ids = []
+
+    for filename in md_files:
+        with open(os.path.join(data_dir, filename), "r") as f:
+            contents = f.read()
+        chunks = [f"## {chunk}" for chunk in contents.split("## ") if chunk.strip()]
+        slug = filename.replace(".md", "")
+        ids = [f"{slug}-chunk-{i}" for i in range(len(chunks))]
+        all_chunks.extend(chunks)
+        all_ids.extend(ids)
+        print(f"  {filename}: {len(chunks)} chunks")
+
+    print(f"Generating embeddings for {len(all_chunks)} total chunks...")
+    response = client_openai.embeddings.create(input=all_chunks, model="text-embedding-3-small")
     print("Upserting to Pinecone...")
-    
+
     index.upsert(
         vectors=[
             {
-                "id": f"chunk-{i}",
+                "id": chunk_id,
                 "values": chunk_embedding.embedding,
                 "metadata": {"text": chunk}
             }
-            for i, (chunk, chunk_embedding) in enumerate(zip(content_chunks, response.data))
+            for chunk_id, chunk, chunk_embedding in zip(all_ids, all_chunks, response.data)
         ]
     )
     print("Ingestion complete")

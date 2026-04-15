@@ -17,7 +17,6 @@ sentry_sdk.init(
     integrations=[StarletteIntegration(), FastApiIntegration()],
     traces_sample_rate=1.0,
 )
-
 app = FastAPI()
 
 origins = [
@@ -43,5 +42,6 @@ def health():
 @app.post("/chat")
 def chat(request: ChatRequest):
     context = retrieve(request.query)
+    sentry_sdk.set_context("rag_query", {"query": request.query, "chunks_returned": len(context)})
     ai_answer = answer(request.query, context)
     return {"answer": ai_answer}

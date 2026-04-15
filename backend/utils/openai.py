@@ -8,6 +8,6 @@ API_KEY=os.getenv("OPENAI_API_KEY")
 model = "text-embedding-3-small"
 client = OpenAI(api_key=API_KEY)
 
-def get_client_openai():
+def get_openai_client():
     return client
         

@@ -566,6 +566,12 @@ button:focus-visible {
   margin-bottom: 24px;
 }
 
+.chat-char-warning {
+  margin: 8px 0 0 !important;
+  font-size: 0.8rem !important;
+  color: #f87171 !important;
+}
+
 .chat-form .ui.input input {
   background: rgba(3, 83, 164, 0.08) !important;
   border: 1px solid #102E4A !important;

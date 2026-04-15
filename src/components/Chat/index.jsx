@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Input, Button } from 'semantic-ui-react';
 
 const API_URL = process.env.GATSBY_API_URL || 'http://localhost:8080';
+const MAX_QUERY_LENGTH = 300;
 
 function Chat() {
   const [query, setQuery] = useState('');
@@ -12,7 +13,7 @@ function Chat() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!query.trim()) return;
+    if (!query.trim() || query.length > MAX_QUERY_LENGTH) return;
 
     setLoading(true);
     setAnswer('');
@@ -26,7 +27,10 @@ function Chat() {
         body: JSON.stringify({ query }),
       });
 
-      if (!response.ok) throw new Error('Something went wrong. Please try again.');
+      if (!response.ok) {
+        const data = await response.json().catch(() => null);
+        throw new Error(data?.error || 'Something went wrong. Please try again.');
+      }
 
       setLoading(false);
       setStreaming(true);
@@ -63,13 +67,18 @@ function Chat() {
           action={
             <Button
               type="submit"
-              disabled={loading || streaming || !query.trim()}
+              disabled={loading || streaming || !query.trim() || query.length > MAX_QUERY_LENGTH}
               className="chat-button"
             >
               {loading ? 'Thinking...' : 'Ask'}
             </Button>
           }
         />
+        {query.length > MAX_QUERY_LENGTH && (
+          <p className="chat-char-warning">
+            Query too long ({query.length}/{MAX_QUERY_LENGTH} characters)
+          </p>
+        )}
       </form>
       {error && (
         <div className="chat-answer chat-answer--error">

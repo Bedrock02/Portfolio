@@ -11,3 +11,5 @@ backend/.env
 backend/venv/
 backend/data/Resume_Latest.pdf
 backend/Resume_Latest.pdf
+**/__pycache__/
+*.pyc

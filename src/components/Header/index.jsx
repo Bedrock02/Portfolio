@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 
 const navItems = [
+  { name: 'AI Chat', href: '#chat' },
   { name: 'About', href: '#about' },
   { name: 'Skills', href: '#skills' },
   { name: 'Experience', href: '#work' },
-  { name: 'AI Chat', href: '#chat' },
 ];
 
 export default function Header() {

@@ -49,14 +49,29 @@ class ChatRequest(BaseModel):
 def health():
     return {"status": "ok"}
 
+def _log_chat_interaction(query: str, response: str, chunks_retrieved: int):
+    sentry_sdk.set_context("chat", {
+        "query": query,
+        "response": response,
+        "chunks_retrieved": chunks_retrieved,
+    })
+    sentry_sdk.capture_message("Chat interaction", level="info")
+
+def _logged_stream(query: str, context: list):
+    chunks = []
+    for chunk in stream_answer(query, context):
+        chunks.append(chunk)
+        yield chunk
+    _log_chat_interaction(query, "".join(chunks), len(context))
+
 @app.post("/chat")
 @limiter.limit("10/day")
 def chat(request: Request, body: ChatRequest):
     if len(body.query) > MAX_QUERY_LENGTH:
         return JSONResponse(status_code=400, content={"error": f"Query must be {MAX_QUERY_LENGTH} characters or fewer."})
     context = retrieve(body.query)
-    sentry_sdk.set_context("rag_query", {"query": body.query, "chunks_returned": len(context)})
     ai_answer = answer(body.query, context)
+    _log_chat_interaction(body.query, ai_answer, len(context))
     return {"answer": ai_answer}
 
 @app.post("/chat/stream")
@@ -65,8 +80,7 @@ def chat_stream(request: Request, body: ChatRequest):
     if len(body.query) > MAX_QUERY_LENGTH:
         return JSONResponse(status_code=400, content={"error": f"Query must be {MAX_QUERY_LENGTH} characters or fewer."})
     context = retrieve(body.query)
-    sentry_sdk.set_context("rag_query", {"query": body.query, "chunks_returned": len(context)})
     return StreamingResponse(
-        stream_answer(body.query, context),
+        _logged_stream(body.query, context),
         media_type="text/plain",
     )

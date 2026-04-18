@@ -2,7 +2,7 @@ from utils.openai import get_openai_client
 from utils.pinecone import get_pinecone_index
 import sentry_sdk
 
-def retrieve(query: str, top_k: int = 5) -> list[str]:
+def retrieve(query: str, top_k: int = 10) -> list[str]:
     client_openai = get_openai_client()
     index = get_pinecone_index()
     

@@ -1,0 +1,13 @@
+backend
+.netlify
+sanity
+scripts/seed-*.mjs
+scripts/validate-sanity-schemas.mjs
+**/__tests__
+**/*.test.ts
+**/*.test.tsx
+coverage
+.env.development
+README.md
+CODE_OF_CONDUCT.md
+CLAUDE.md

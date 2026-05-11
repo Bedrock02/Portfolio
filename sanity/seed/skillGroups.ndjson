@@ -1,0 +1,9 @@
+{"_id":"skillGroup.frontend","_type":"skillGroup","category":"Frontend","skills":["TypeScript","React","JavaScript","HTML / CSS","React Native"],"order":10}
+{"_id":"skillGroup.frameworks","_type":"skillGroup","category":"Frameworks","skills":["Next.js","Gatsby","Flask"],"order":20}
+{"_id":"skillGroup.backend","_type":"skillGroup","category":"Backend","skills":["Go","Python","REST APIs","Node.js"],"order":30}
+{"_id":"skillGroup.ai-tools","_type":"skillGroup","category":"AI Tools","skills":["Claude","Cursor","GitHub Copilot","ChatGPT","OpenAI API"],"order":40}
+{"_id":"skillGroup.experimentation-observability","_type":"skillGroup","category":"Experimentation & Observability","skills":["Optimizely","Datadog","k6","Split.io","Sentry","Rollbar"],"order":50}
+{"_id":"skillGroup.cloud-infrastructure","_type":"skillGroup","category":"Cloud & Infrastructure","skills":["AWS Lambda","SQS","S3","DynamoDB","CircleCI","GitLab CI"],"order":60}
+{"_id":"skillGroup.cms-commerce","_type":"skillGroup","category":"CMS & Commerce","skills":["Contentful","CommerceTools","Shopify"],"order":70}
+{"_id":"skillGroup.testing","_type":"skillGroup","category":"Testing","skills":["Jest","Cucumber","Pytest","Selenium","Appium"],"order":80}
+{"_id":"skillGroup.product-collaboration","_type":"skillGroup","category":"Product & Collaboration","skills":["Figma","Jira","Confluence","Git"],"order":90}

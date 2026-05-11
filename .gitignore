@@ -14,3 +14,13 @@ backend/data/Resume_Latest.pdf
 backend/Resume_Latest.pdf
 **/__pycache__/
 *.pyc
+
+# Next.js
+.next
+out
+
+# Vercel
+.vercel
+
+# Coverage
+coverage

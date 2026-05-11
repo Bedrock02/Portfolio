@@ -1,4 +1,7 @@
 {
+  "engines": {
+    "node": ">=24.15.0"
+  },
   "name": "portfolio",
   "description": "Steven Jimenez portfolio — Next.js 14 + Sanity",
   "version": "2.0.0",
@@ -12,7 +15,8 @@
     "next": "^14.2.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "sanity": "^3.40.0"
+    "sanity": "^3.40.0",
+    "styled-components": "^6.4.1"
   },
   "keywords": [
     "nextjs",

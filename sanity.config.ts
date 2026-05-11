@@ -16,8 +16,8 @@ export default defineConfig({
   name: 'portfolio',
   title: 'Portfolio CMS',
 
-  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || '',
-  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || 'production',
+  projectId: process.env.SANITY_STUDIO_PROJECT_ID || process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || '',
+  dataset: process.env.SANITY_STUDIO_DATASET || process.env.NEXT_PUBLIC_SANITY_DATASET || 'production',
 
   plugins: [structureTool(), visionTool()],
 

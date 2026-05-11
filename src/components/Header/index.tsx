@@ -35,7 +35,7 @@ const linkBase =
 const lineBase =
   'inline-block h-px flex-shrink-0 transition-all duration-200 ease-out'
 
-export default function Header(): JSX.Element {
+const Header = (): JSX.Element => {
   const [activeItem, setActiveItem] = useState<string>('About')
 
   useEffect(() => {
@@ -89,3 +89,5 @@ export default function Header(): JSX.Element {
     </nav>
   )
 }
+
+export default Header

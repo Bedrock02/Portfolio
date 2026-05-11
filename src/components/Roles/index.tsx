@@ -80,7 +80,7 @@ export interface RolesProps {
   data?: RoleEntry[] | null
 }
 
-function Roles({ data }: RolesProps): JSX.Element | null {
+const Roles = ({ data }: RolesProps): JSX.Element | null => {
   if (!data || data.length === 0) return null
 
   return (

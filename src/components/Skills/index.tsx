@@ -26,7 +26,7 @@ export interface SkillsProps {
   data?: SkillGroup[]
 }
 
-function Skills({ data }: SkillsProps): JSX.Element | null {
+const Skills = ({ data }: SkillsProps): JSX.Element | null => {
   if (!data || data.length === 0) return null
 
   return (

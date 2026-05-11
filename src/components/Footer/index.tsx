@@ -57,7 +57,7 @@ export interface FooterProps {
   profileName?: string
 }
 
-function sortLinks(links: readonly FooterLink[] | undefined): FooterLink[] {
+const sortLinks = (links: readonly FooterLink[] | undefined): FooterLink[] => {
   if (!links || links.length === 0) return []
   return [...links].sort((a, b) => {
     const ao = typeof a.order === 'number' ? a.order : 0
@@ -66,7 +66,7 @@ function sortLinks(links: readonly FooterLink[] | undefined): FooterLink[] {
   })
 }
 
-function Footer({ data, profileName }: FooterProps): JSX.Element | null {
+const Footer = ({ data, profileName }: FooterProps): JSX.Element | null => {
   const links = sortLinks(data?.links)
 
   // Render nothing when there's no editorial content at all — keeps

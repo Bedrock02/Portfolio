@@ -9,7 +9,7 @@
  * The single-page site has no real subroutes — this exists mainly for
  * mistyped anchor links and any stray crawler hits.
  */
-export default function NotFound(): JSX.Element {
+const NotFound = (): JSX.Element => {
   return (
     <section className="portfolio-section pb-[100px]">
       <h2 className="mb-4 text-[0.75rem] font-bold uppercase tracking-[0.12em] text-sky-200">
@@ -32,3 +32,5 @@ export default function NotFound(): JSX.Element {
     </section>
   )
 }
+
+export default NotFound

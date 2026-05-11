@@ -43,7 +43,7 @@ const FALLBACK_DESCRIPTION =
  * tagline. The hero shows the whole tagline; SEO surfaces benefit
  * from a single tight sentence so we trim conservatively.
  */
-function firstParagraph(text: string | undefined): string | undefined {
+const firstParagraph = (text: string | undefined): string | undefined => {
   if (!text) return undefined
   const trimmed = text
     .split(/\n+/)
@@ -57,7 +57,7 @@ export const viewport: Viewport = {
   initialScale: 1,
 }
 
-export async function generateMetadata(): Promise<Metadata> {
+export const generateMetadata = async (): Promise<Metadata> => {
   // Defensive: a fresh Sanity project may have no `profileData` doc
   // authored yet. Fall back to baked-in copy so `next build` never
   // crashes on a missing singleton.
@@ -107,11 +107,11 @@ export async function generateMetadata(): Promise<Metadata> {
   }
 }
 
-export default async function RootLayout({
+const RootLayout = async ({
   children,
 }: {
   children: ReactNode
-}): Promise<JSX.Element> {
+}): Promise<JSX.Element> => {
   // Same defensive pattern as generateMetadata — chrome renders with
   // sane fallbacks when Sanity hasn't been seeded yet.
   let profile: ProfileData | null = null
@@ -136,3 +136,5 @@ export default async function RootLayout({
     </html>
   )
 }
+
+export default RootLayout

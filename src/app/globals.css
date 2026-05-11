@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * Global tokens carried over from the legacy Semantic UI theme.
+ * Components consume these via Tailwind utilities (bg-navy-950, text-sky-200, etc.)
+ * but anything that still ships raw CSS can reference the custom properties below.
+ */
+:root {
+  --color-page: #061A40;
+  --color-page-border: #102E4A;
+  --color-accent-border: #0353A4;
+  --color-heading: #B9D6F2;
+  --color-body: #94a3b8;
+  --color-body-legacy: #7890a8;
+  --color-primary: #663399;
+  --color-accent: #c49cf7;
+
+  --font-sans: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  --line-height-base: 1.4285em;
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--color-page);
+    color: var(--color-body);
+    line-height: var(--line-height-base);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: var(--color-heading);
+    font-weight: 700;
+    line-height: 1.2857em;
+  }
+
+  a {
+    color: var(--color-accent-border);
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: var(--color-heading);
+  }
+}
+
+/*
+ * `.portfolio-section` is a JS hook consumed by the IntersectionObserver
+ * in `src/components/Layout/index.jsx`. The observer adds `section-visible`
+ * once the section scrolls into view. Both rules are expressed with
+ * Tailwind utilities via @apply so the styling stays inside the Tailwind
+ * design system (no bespoke CSS values).
+ */
+@layer components {
+  .portfolio-section {
+    @apply translate-y-4 opacity-0 transition-all duration-700 ease-out;
+  }
+
+  .portfolio-section.section-visible {
+    @apply translate-y-0 opacity-100;
+  }
+}

@@ -36,7 +36,7 @@ const builder = imageUrlBuilder(sanityClient)
  *
  *   urlForImage(logo).width(96).height(96).fit('crop').url()
  */
-export function urlForImage(source: SanityImageSource): ImageUrlBuilder {
+export const urlForImage = (source: SanityImageSource): ImageUrlBuilder => {
   return builder.image(source)
 }
 
@@ -45,10 +45,10 @@ export function urlForImage(source: SanityImageSource): ImageUrlBuilder {
  * provided default so components never render an empty `alt` attribute,
  * which would degrade accessibility audits.
  */
-export function altForImage(
+export const altForImage = (
   source: SanityImageObject & { alt?: string },
   fallback: string,
-): string {
+): string => {
   return source.alt && source.alt.trim().length > 0 ? source.alt : fallback
 }
 

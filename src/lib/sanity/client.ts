@@ -29,11 +29,11 @@ import {
  * Build a client. Kept private so callers always go through the
  * singletons below, which guarantees consistent caching + token usage.
  */
-function buildClient(options: {
+const buildClient = (options: {
   useCdn: boolean
   token?: string
   perspective?: 'published' | 'previewDrafts'
-}): SanityClient {
+}): SanityClient => {
   return createClient({
     projectId,
     dataset,
@@ -84,11 +84,11 @@ export const sanityPreviewClient: SanityClient = hasReadToken
  *   const client = getSanityClient({ preview: searchParams.preview === '1' })
  *   const data = await client.fetch(profileQuery)
  */
-export function getSanityClient({
+export const getSanityClient = ({
   preview,
 }: {
   preview?: boolean
-}): SanityClient {
+}): SanityClient => {
   return preview ? sanityPreviewClient : sanityClient
 }
 

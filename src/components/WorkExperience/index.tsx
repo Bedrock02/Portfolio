@@ -41,7 +41,7 @@ interface WorkItemProps {
  *   - 110px date rail (left)
  *   - 1fr details column (right) with logo, title, copy, tool pills
  */
-function WorkItem({ item }: WorkItemProps): JSX.Element {
+const WorkItem = ({ item }: WorkItemProps): JSX.Element => {
   const { logo, href, company, date, title, description, tools } = item
   const logoUrl = urlForImage(logo)
     .width(192)
@@ -100,7 +100,7 @@ function WorkItem({ item }: WorkItemProps): JSX.Element {
   )
 }
 
-function WorkExperience({ data }: WorkExperienceProps): JSX.Element | null {
+const WorkExperience = ({ data }: WorkExperienceProps): JSX.Element | null => {
   if (!data || data.length === 0) return null
 
   return (

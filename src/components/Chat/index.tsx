@@ -5,7 +5,7 @@ import React, { useState, FormEvent } from 'react'
 const API_URL = process.env.NEXT_PUBLIC_CHAT_API_URL || 'http://localhost:8080'
 const MAX_QUERY_LENGTH = 300
 
-function Chat(): JSX.Element {
+const Chat = (): JSX.Element => {
   const [query, setQuery] = useState('')
   const [answer, setAnswer] = useState('')
   const [loading, setLoading] = useState(false)

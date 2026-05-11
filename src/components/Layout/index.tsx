@@ -33,7 +33,7 @@ export interface LayoutProps {
   footer?: FooterData | null
 }
 
-function Layout({ children, profile = null, footer = null }: LayoutProps): JSX.Element {
+const Layout = ({ children, profile = null, footer = null }: LayoutProps): JSX.Element => {
   useEffect(() => {
     const sections = document.querySelectorAll('.portfolio-section')
     const observer = new IntersectionObserver(

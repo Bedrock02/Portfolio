@@ -15,7 +15,7 @@ interface ProfileProps {
   data?: ProfileData | null
 }
 
-function Profile({ data }: ProfileProps): JSX.Element | null {
+const Profile = ({ data }: ProfileProps): JSX.Element | null => {
   if (!data) return null
 
   const {

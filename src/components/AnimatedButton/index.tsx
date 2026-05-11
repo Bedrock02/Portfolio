@@ -6,7 +6,7 @@ interface AnimatedButtonProps {
   onClick: () => void
 }
 
-function AnimatedButton({ title, iconName, onClick }: AnimatedButtonProps): JSX.Element {
+const AnimatedButton = ({ title, iconName, onClick }: AnimatedButtonProps): JSX.Element => {
   return (
     <div className="py-[50px]">
       <button

@@ -44,8 +44,6 @@ interface WorkItemProps {
 const WorkItem = ({ item }: WorkItemProps): JSX.Element => {
   const { logo, href, company, date, title, description, tools } = item
   const logoUrl = urlForImage(logo)
-    .width(300)
-    .height(80)
     .fit('max')
     .auto('format')
     .url()
@@ -56,11 +54,11 @@ const WorkItem = ({ item }: WorkItemProps): JSX.Element => {
         {date}
       </div>
       <div className="flex-1">
-        <div className="mb-3 inline-flex items-center justify-center rounded-md bg-slate-100 px-3 py-2">
+        <div className="mb-3 flex h-16 w-40 items-center justify-center rounded-md bg-slate-100 p-3">
           <img
             src={logoUrl}
             alt={logoAlt}
-            className="h-10 w-auto max-w-[150px] object-contain"
+            className="h-full w-full object-contain"
           />
         </div>
         <h3 className="mb-2.5 mt-0 text-base font-semibold">

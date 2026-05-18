@@ -64,7 +64,7 @@
  */
 @layer components {
   .portfolio-section {
-    @apply translate-y-4 opacity-0 transition-all duration-700 ease-out;
+    @apply translate-y-4 opacity-0 transition-all duration-700 ease-out scroll-mt-10;
   }
 
   .portfolio-section.section-visible {

@@ -44,23 +44,23 @@ interface WorkItemProps {
 const WorkItem = ({ item }: WorkItemProps): JSX.Element => {
   const { logo, href, company, date, title, description, tools } = item
   const logoUrl = urlForImage(logo)
-    .width(192)
-    .height(48)
+    .width(300)
+    .height(80)
     .fit('max')
     .auto('format')
     .url()
   const logoAlt = altForImage(logo, `${company} logo`)
   return (
-    <div className="group grid grid-cols-[110px_1fr] gap-6 cursor-default rounded-md border border-transparent p-5 transition-colors duration-200 ease-in-out hover:border-navy-800 hover:bg-navy-600/15">
+    <div className="group grid grid-cols-[150px_1fr] gap-6 cursor-default rounded-md border border-transparent p-5 transition-colors duration-200 ease-in-out hover:border-navy-800 hover:bg-navy-600/15">
       <div className="pt-1 text-[0.72rem] font-semibold uppercase leading-relaxed tracking-wider text-slate-500">
         {date}
       </div>
       <div className="flex-1">
-        <div className="mb-3">
+        <div className="mb-3 inline-flex items-center justify-center rounded-md bg-slate-100 px-3 py-2">
           <img
             src={logoUrl}
             alt={logoAlt}
-            className="h-6 w-auto object-contain opacity-50 grayscale-[20%] transition-[opacity,filter] duration-200 ease-in-out group-hover:opacity-100 group-hover:grayscale-0"
+            className="h-10 w-auto max-w-[150px] object-contain"
           />
         </div>
         <h3 className="mb-2.5 mt-0 text-base font-semibold">

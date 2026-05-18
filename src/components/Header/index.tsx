@@ -36,21 +36,25 @@ const lineBase =
   'inline-block h-px flex-shrink-0 transition-all duration-200 ease-out'
 
 const Header = (): JSX.Element => {
-  const [activeItem, setActiveItem] = useState<string>('About')
+  const [activeItem, setActiveItem] = useState<string>('chat')
 
   useEffect(() => {
+    const visible = new Set<string>()
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            const matched = navItems.find(
-              (item) => item.sectionId === entry.target.id,
-            )
-            if (matched) setActiveItem(matched.name)
+            visible.add(entry.target.id)
+          } else {
+            visible.delete(entry.target.id)
           }
         })
+        // Always pick the topmost visible section so initial load lands on chat
+        const topmost = navItems.find((item) => visible.has(item.sectionId))
+        if (topmost) setActiveItem(topmost.name)
       },
-      { threshold: 0.3 },
+      { threshold: 0.1 },
     )
 
     navItems.forEach(({ sectionId }) => {

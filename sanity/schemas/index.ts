@@ -2,7 +2,7 @@ import type { SchemaTypeDefinition } from 'sanity'
 
 import { footerData } from './footerData'
 import { profileData } from './profileData'
-import { roleEntry } from './roleEntry'
+import { aboutSummary } from './roleEntry'
 import { skillGroup } from './skillGroup'
 import { workExperienceEntry } from './workExperienceEntry'
 
@@ -16,7 +16,7 @@ export const schemaTypes: SchemaTypeDefinition[] = [
   profileData,
   footerData,
   workExperienceEntry,
-  roleEntry,
+  aboutSummary,
   skillGroup,
 ]
 

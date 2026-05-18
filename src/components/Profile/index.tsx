@@ -39,21 +39,21 @@ const Profile = ({ data }: ProfileProps): JSX.Element | null => {
 
   return (
     <div className="mb-12">
-      <h1 className="mb-3 text-[2.8rem] font-bold leading-[1.1] text-sky-200">{name}</h1>
-      <h2 className="mb-4 text-[1.1rem] font-medium tracking-wide text-purple-700">{title}</h2>
+      <h1 className="mb-12 text-[2.8rem] font-bold leading-[1.1] text-sky-200">{name}</h1>
+      <h2 className="mb-12 text-[1.1rem] font-medium tracking-wide text-purple-700">{title}</h2>
       {openToWork ? (
         <div
-          className="mb-4 inline-flex items-center gap-2 rounded-full border border-navy-600/40 bg-navy-600/10 px-3 py-1 text-[0.78rem] font-semibold tracking-wide text-sky-200"
+          className="mb-12 inline-flex items-center gap-2 rounded-full border border-navy-600/40 bg-navy-600/10 px-3 py-1 text-[0.78rem] font-semibold tracking-wide text-sky-200"
           aria-label={openToWorkLabel || 'Open to new opportunities'}
         >
           <span
             aria-hidden="true"
-            className="h-2 w-2 animate-pulse rounded-full bg-purple-300"
+            className="h-2 w-2 animate-pulse rounded-full bg-green-500"
           />
           <span>{openToWorkLabel || 'Open to new opportunities'}</span>
         </div>
       ) : null}
-      <p className="mb-7 max-w-[320px] text-[0.95rem] leading-[1.7] text-slate-500">
+      <p className="mb-12 max-w-[320px] text-[0.95rem] leading-[1.7] text-slate-500">
         {taglineNodes}
       </p>
       <div className="flex flex-wrap items-center gap-3">
@@ -70,11 +70,26 @@ const Profile = ({ data }: ProfileProps): JSX.Element | null => {
         ) : null}
         {contactEmail ? (
           <a
-            className="text-[0.85rem] font-medium text-purple-700 no-underline transition-colors duration-200 ease-in-out hover:text-purple-300"
+            className="inline-flex items-center gap-2 rounded border border-navy-600 px-5 py-2.5 text-[0.85rem] font-semibold tracking-wider text-sky-200 no-underline transition-colors duration-200 ease-in-out hover:border-sky-200 hover:bg-navy-600/20"
             href={`mailto:${contactEmail}`}
             aria-label={`Email ${name || 'me'}`}
           >
-            {contactEmail}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="15"
+              height="15"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
+              <rect width="20" height="16" x="2" y="4" rx="2" />
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+            </svg>
+            Contact
           </a>
         ) : null}
       </div>

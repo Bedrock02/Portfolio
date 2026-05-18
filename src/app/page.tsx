@@ -1,11 +1,13 @@
+import About from '../components/About'
 import Chat from '../components/Chat'
-import Roles from '../components/Roles'
 import Skills from '../components/Skills'
 import WorkExperience from '../components/WorkExperience'
 import {
   sanityClient,
+  aboutQuery,
   skillsQuery,
   workExperienceQuery,
+  type AboutSummary,
   type SkillGroup,
   type WorkExperienceEntry,
 } from '../lib/sanity'
@@ -38,16 +40,20 @@ import {
 export const dynamic = 'force-static'
 
 export default async function HomePage(): Promise<JSX.Element> {
+  let about: AboutSummary | null = null
   let skills: SkillGroup[] = []
   let work: WorkExperienceEntry[] = []
   try {
-    const [skillsResult, workResult] = await Promise.all([
+    const [aboutResult, skillsResult, workResult] = await Promise.all([
+      sanityClient.fetch<AboutSummary | null>(aboutQuery),
       sanityClient.fetch<SkillGroup[] | null>(skillsQuery),
       sanityClient.fetch<WorkExperienceEntry[] | null>(workExperienceQuery),
     ])
+    about = aboutResult ?? null
     skills = skillsResult ?? []
     work = workResult ?? []
   } catch {
+    about = null
     skills = []
     work = []
   }
@@ -55,7 +61,7 @@ export default async function HomePage(): Promise<JSX.Element> {
   return (
     <>
       <Chat />
-      <Roles />
+      <About data={about} />
       <Skills data={skills} />
       <WorkExperience data={work} />
     </>

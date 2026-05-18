@@ -19,5 +19,5 @@ export {
   type WorkExperienceEntry,
   type WorkExperienceLogo,
 } from './workExperience'
-export { rolesQuery, type RoleEntry } from './roles'
+export { aboutQuery, type AboutSummary, type SanityBlock, type SanitySpan, type SanityHardBreak, type SanityMark } from './about'
 export { footerQuery, type FooterData, type FooterLink } from './footer'

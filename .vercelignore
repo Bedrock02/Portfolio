@@ -1,6 +1,6 @@
 backend
 .netlify
-sanity
+/sanity
 scripts/seed-*.mjs
 scripts/validate-sanity-schemas.mjs
 **/__tests__

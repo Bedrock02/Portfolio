@@ -1,6 +1,7 @@
 import './globals.css'
 import type { Metadata, Viewport } from 'next'
 import type { ReactNode } from 'react'
+import { Analytics } from "@vercel/analytics/next"
 
 import Layout from '../components/Layout'
 import {
@@ -132,6 +133,7 @@ const RootLayout = async ({
         <Layout profile={profile} footer={footer}>
           {children}
         </Layout>
+        <Analytics />
       </body>
     </html>
   )

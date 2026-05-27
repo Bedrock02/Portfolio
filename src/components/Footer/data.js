@@ -20,7 +20,7 @@ export const linkData = [
     ariaLabel: 'Strava profile',
   },
   {
-    href: 'mailto:jimsteve91@gmail.com',
+    href: 'mailto:steven.jimenez@wepadev.com',
     iconName: 'mail',
     ariaLabel: 'Send email',
   },

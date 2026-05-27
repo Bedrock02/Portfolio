@@ -1,6 +1,6 @@
 {
   "engines": {
-    "node": ">=24.15.0"
+    "node": "22.x"
   },
   "name": "portfolio",
   "description": "Steven Jimenez portfolio — Next.js 14 + Sanity",

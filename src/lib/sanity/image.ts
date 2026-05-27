@@ -15,12 +15,8 @@
  * `.auto('format')`, etc. without leaking Sanity-specific options into
  * call sites that just want a URL.
  */
-import imageUrlBuilder from '@sanity/image-url'
-import type { ImageUrlBuilder } from '@sanity/image-url/lib/types/builder'
-import type {
-  SanityImageSource,
-  SanityImageObject,
-} from '@sanity/image-url/lib/types/types'
+import { createImageUrlBuilder } from '@sanity/image-url'
+import type { ImageUrlBuilder, SanityImageSource, SanityImageObject } from '@sanity/image-url'
 
 import { sanityClient } from './client'
 
@@ -28,7 +24,7 @@ import { sanityClient } from './client'
  * Shared builder bound to the production project + dataset. Reused
  * across calls so we don't re-parse client config on every render.
  */
-const builder = imageUrlBuilder(sanityClient)
+const builder = createImageUrlBuilder(sanityClient)
 
 /**
  * Build an `ImageUrlBuilder` for a Sanity image source. Returning the
@@ -46,7 +42,7 @@ export const urlForImage = (source: SanityImageSource): ImageUrlBuilder => {
  * which would degrade accessibility audits.
  */
 export const altForImage = (
-  source: SanityImageObject & { alt?: string },
+  source: { alt?: string },
   fallback: string,
 ): string => {
   return source.alt && source.alt.trim().length > 0 ? source.alt : fallback

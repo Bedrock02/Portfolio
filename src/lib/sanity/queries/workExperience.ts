@@ -17,7 +17,7 @@
  * can run it through `urlForImage()` (see ../image.ts) to obtain a CDN
  * URL with width/height transforms applied at the call site.
  */
-import type { SanityImageObject } from '@sanity/image-url/lib/types/types'
+import type { SanityImageObject } from '@sanity/image-url'
 
 export interface WorkExperienceLogo extends SanityImageObject {
   /** Optional accessible alt text authored alongside the asset. */

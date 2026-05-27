@@ -30,14 +30,10 @@ import {
  *
  * Hobbies is intentionally absent — the migration drops it entirely.
  *
- * Rendering strategy: Server Component with `force-static` so the data
- * fetches resolve at build time (SSG). Sanity credentials never reach
- * the bundle, and Vercel serves a pure static HTML payload at request
- * time. The two GROQ queries are issued in parallel; either one
- * returning `null` is degraded to an empty array so unauthored content
- * just hides its section rather than crashing the build.
+ * Rendering strategy: Server Component with `revalidate` so page re-fetches from Sanity every hour automatically.
+ * Publish in Sanity Studio -> live within 60 minutes, no redeploy needed.
  */
-export const dynamic = 'force-static'
+export const revalidate = 3600
 
 export default async function HomePage(): Promise<JSX.Element> {
   let about: AboutSummary | null = null

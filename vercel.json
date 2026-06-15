@@ -3,7 +3,7 @@
   "framework": "nextjs",
   "buildCommand": "next build",
   "devCommand": "next dev",
-  "installCommand": "npm ci",
+  "installCommand": "npm ci --legacy-peer-deps",
   "outputDirectory": ".next",
   "cleanUrls": true,
   "trailingSlash": false,

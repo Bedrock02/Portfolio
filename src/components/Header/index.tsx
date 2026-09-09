@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 /**
  * Sidebar primary navigation.
@@ -35,7 +35,7 @@ const linkBase =
 const lineBase =
   'inline-block h-px flex-shrink-0 transition-all duration-200 ease-out'
 
-const Header = (): JSX.Element => {
+const Header = (): React.JSX.Element => {
   const [activeItem, setActiveItem] = useState<string>('chat')
 
   useEffect(() => {

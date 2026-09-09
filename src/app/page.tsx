@@ -1,3 +1,4 @@
+import React from 'react'
 import About from '../components/About'
 import Chat from '../components/Chat'
 import Skills from '../components/Skills'
@@ -35,7 +36,7 @@ import {
  */
 export const revalidate = 3600
 
-export default async function HomePage(): Promise<JSX.Element> {
+export default async function HomePage(): Promise<React.JSX.Element> {
   let about: AboutSummary | null = null
   let skills: SkillGroup[] = []
   let work: WorkExperienceEntry[] = []

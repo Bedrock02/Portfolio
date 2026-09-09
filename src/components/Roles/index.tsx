@@ -1,3 +1,4 @@
+import React from 'react'
 import type { ReactNode } from 'react'
 
 import type { RoleEntry } from '../../lib/sanity/queries/roles'
@@ -80,7 +81,7 @@ export interface RolesProps {
   data?: RoleEntry[] | null
 }
 
-const Roles = ({ data }: RolesProps): JSX.Element | null => {
+const Roles = ({ data }: RolesProps): React.JSX.Element | null => {
   if (!data || data.length === 0) return null
 
   return (

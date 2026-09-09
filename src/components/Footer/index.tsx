@@ -9,7 +9,8 @@ import type { FooterData, FooterLink } from '../../lib/sanity'
  * sourced from the singleton `footerData` document in Sanity. The
  * parent `Layout` receives that document from the root server layout
  * and forwards it via the `data` prop. This component is pure and has
- * no `'use client'` directive — it can render in either a server or
+ * no `'use client'
+import React from 'react'` directive — it can render in either a server or
  * client tree.
  *
  * Icons are an internal presentation concern (not editorial), so the
@@ -66,7 +67,7 @@ const sortLinks = (links: readonly FooterLink[] | undefined): FooterLink[] => {
   })
 }
 
-const Footer = ({ data, profileName }: FooterProps): JSX.Element | null => {
+const Footer = ({ data, profileName }: FooterProps): React.JSX.Element | null => {
   const links = sortLinks(data?.links)
 
   // Render nothing when there's no editorial content at all — keeps

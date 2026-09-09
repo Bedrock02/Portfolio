@@ -1,3 +1,4 @@
+import React from 'react'
 import './globals.css'
 import type { Metadata, Viewport } from 'next'
 import type { ReactNode } from 'react'
@@ -112,7 +113,7 @@ const RootLayout = async ({
   children,
 }: {
   children: ReactNode
-}): Promise<JSX.Element> => {
+}): Promise<React.JSX.Element> => {
   // Same defensive pattern as generateMetadata — chrome renders with
   // sane fallbacks when Sanity hasn't been seeded yet.
   let profile: ProfileData | null = null

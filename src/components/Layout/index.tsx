@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, type ReactNode } from 'react'
+import React, { useEffect, type ReactNode } from 'react'
 
 import Footer from '../Footer'
 import Header from '../Header'
@@ -33,7 +33,7 @@ export interface LayoutProps {
   footer?: FooterData | null
 }
 
-const Layout = ({ children, profile = null, footer = null }: LayoutProps): JSX.Element => {
+const Layout = ({ children, profile = null, footer = null }: LayoutProps): React.JSX.Element => {
   useEffect(() => {
     const sections = document.querySelectorAll('.portfolio-section')
     const observer = new IntersectionObserver(

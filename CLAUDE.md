@@ -5,34 +5,41 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Commands
 
 ```bash
-gatsby develop    # Start dev server at localhost:8000
-gatsby build      # Production build to /public
-prettier --write '**/*.js'   # Format all JS files
+npm run dev          # Start Next.js dev server
+npm run build        # Production build
+npm run start        # Serve production build
+npm run lint         # ESLint
+npm run format       # Prettier (JS/TS/JSX/TSX)
+npm test             # Jest with coverage
+npm run sanity:dev   # Run Sanity Studio locally
+npm run sanity:deploy # Deploy Sanity Studio
 ```
-
-No tests are configured (`npm test` exits with an error).
 
 ## Architecture
 
-This is a **Gatsby 4 static portfolio site** for Steven Jimenez. It is a single-page app with anchor-based navigation — there are only two actual routes: `/` (index) and `/404`.
+This is a **Next.js 14 portfolio site** for Steven Jimenez, using the App Router (`src/app/`). Content is managed via **Sanity CMS** with an embedded Studio route.
 
-### Styling approach
+### Stack
 
-The project uses two styling systems side-by-side:
+- **Next.js 14** — App Router, deployed on Vercel
+- **Sanity v6** — headless CMS; Studio mounted at `/studio` via `src/app/studio/[[...tool]]/page.tsx`
+- **Tailwind CSS** — utility-first styling via `tailwind.config.ts`
+- **TypeScript** — throughout
 
-1. **CSS Modules** (`.module.css` files) — scoped styles per component
-2. **Semantic UI Less** — globally customized via `src/semantic/`. The custom theme lives in `src/semantic/site/` (overrides defaults). Webpack resolves `../../theme.config$` to `src/semantic/theme.config` (see `gatsby-node.js`). The postinstall script (`scripts/semantic-ui-less-postinstall.js`) links the theme into Semantic UI's node_modules directory.
+### Project structure
 
-### Component data
+- `src/app/` — Next.js App Router pages (`layout.tsx`, `page.tsx`, `not-found.tsx`, `globals.css`)
+- `src/components/` — React components (About, Chat, Footer, Header, Layout, Profile, Roles, Skills, WorkExperience, AnimatedButton)
+- `src/lib/sanity/` — Sanity client singletons (`sanityClient` for CDN reads, `sanityPreviewClient` for draft-aware preview)
+- `src/assets/` — static images and videos
+- `sanity/` — Sanity schema definitions
+- `sanity.config.ts` — Sanity Studio configuration (project ID and dataset from env vars)
+- `scripts/` — seed scripts for Sanity content (`seed-footer-data`, `seed-role-entries`, `seed-skill-groups`)
 
-Each component that renders content has a sibling `data.js` file (e.g., `src/components/WorkExperience/data.js`). Content changes go there — not in the JSX.
+### Content model
 
-### Key components
-
-- **Layout** — wraps every page; provides Header, Footer, background image, and SEO via React Helmet with a GraphQL `StaticQuery` for site title
-- **WorkExperience** — employment timeline; each entry has logo, dates, title, description, and tech stack array
-- **Hobbies** — uses `react-video-looper` for auto-playing looped videos
+Content lives in Sanity. Seed scripts in `scripts/` populate initial data. Components fetch content via GROQ queries through the Sanity client.
 
 ### Linting
 
-ESLint uses the Airbnb config. Prettier config: no semis, single quotes, trailing commas in ES5 positions.
+ESLint extends Airbnb config. Prettier config: no semis, single quotes, trailing commas in ES5 positions.

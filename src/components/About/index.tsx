@@ -51,7 +51,7 @@ const renderBlock = (block: SanityBlock): React.ReactNode => (
   </p>
 )
 
-const About = ({ data }: AboutProps): JSX.Element | null => {
+const About = ({ data }: AboutProps): React.JSX.Element | null => {
   if (!data?.summary?.length) return null
 
   return (
